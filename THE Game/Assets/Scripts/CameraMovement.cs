@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//honestly Im not too sure whats going on
+
 public class CameraMovement : MonoBehaviour
 {
     public Transform target;
