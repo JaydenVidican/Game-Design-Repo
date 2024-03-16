@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    public float speed;
+    public float speed = 5;
     private Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator animator; //new
+    private bool canSprint = true;
 
 
     // Start is called before the first frame update
@@ -20,9 +21,17 @@ public class MovementController : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        if (Input.GetKey("left shift") && canSprint == true)
+            speed = 10;
+        else
+            speed = 5;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
+        
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
@@ -51,4 +60,15 @@ public class MovementController : MonoBehaviour
             transform.position + change.normalized * speed * Time.deltaTime
         );
     }
+
+/*
+     void OnCollisionEnter2D(Collision2D col)
+    {
+        canSprint = false;
+    }
+    void OnCollisionExit2D(Collision2D col)
+    {
+        canSprint = true;
+    }
+    */
 }
