@@ -12,7 +12,6 @@ public class ChestScript : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D col)
     {
-        Debug.Log("Collision with chest");
         if (!isOpened)
             OpenChest();
 

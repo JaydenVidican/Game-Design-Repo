@@ -4,8 +4,16 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+public enum PlayerState
+{
+    walk,
+    attack,
+    interact
+}
+
 public class MovementController : MonoBehaviour
 {
+    public PlayerState currentState;
     public float speed = 5; //player speed
     private Rigidbody2D myRigidbody; //creates rigidbody object
     private Vector3 change; //creates vector object
@@ -15,6 +23,7 @@ public class MovementController : MonoBehaviour
 
     void Start()
     {
+        currentState = PlayerState.walk;
         animator = GetComponent<Animator>(); //accesses animations
         myRigidbody = GetComponent<Rigidbody2D>(); //accesses rigig body component of player
 
@@ -34,7 +43,24 @@ public class MovementController : MonoBehaviour
         change = Vector3.zero; 
         change.x = Input.GetAxisRaw("Horizontal"); //gets horizontal movement
         change.y = Input.GetAxisRaw("Vertical"); //gets vertical movement
-        UpdateAnimationAndMove();
+        if (Input.GetButtonDown("attack") && currentState != PlayerState.attack)
+        {
+            StartCoroutine(AttackCo());
+        }
+        else if (currentState == PlayerState.walk)
+        {
+            UpdateAnimationAndMove();
+        }
+    }
+
+    private IEnumerator AttackCo()
+    {
+        animator.SetBool("attacking", true);
+        currentState = PlayerState.attack;
+        yield return null;
+        animator.SetBool("attacking", false);
+        yield return new WaitForSeconds(.5f);
+        currentState = PlayerState.walk;
     }
 
     void UpdateAnimationAndMove() //moves character and updates the animation
@@ -61,15 +87,4 @@ public class MovementController : MonoBehaviour
             transform.position + change.normalized * speed * Time.deltaTime
         );
     }
-
-/*
-     void OnCollisionEnter2D(Collision2D col)
-    {
-        canSprint = false;
-    }
-    void OnCollisionExit2D(Collision2D col)
-    {
-        canSprint = true;
-    }
-    */
 }
