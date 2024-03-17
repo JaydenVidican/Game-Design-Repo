@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
     public void counter()
     {
         c++;
-        if (c == 4)
+        if (c == 5)
             LoadLevel("Win");
     }
 //testing home commit
