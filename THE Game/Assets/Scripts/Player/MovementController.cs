@@ -26,7 +26,8 @@ public class MovementController : MonoBehaviour
         currentState = PlayerState.walk;
         animator = GetComponent<Animator>(); //accesses animations
         myRigidbody = GetComponent<Rigidbody2D>(); //accesses rigig body component of player
-
+        animator.SetFloat("moveX", 0);
+        animator.SetFloat("moveY", -1);
     }
 
     void Update() //checks every frame if player is holding spring key
