@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1048131999, guid: 44d5e98953121104585486747a76a79a, type: 3}
+  m_Sprite: {fileID: 1973051282, guid: 44d5e98953121104585486747a76a79a, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 125030011}
   m_Layer: 0
   m_Name: up hit box
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,8 +474,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e5bffd2cae222488bf830336437d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 5
+  thrust: 4
   knockTime: 0.2
+  damage: 1
 --- !u!1 &240626271
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +521,7 @@ GameObject:
   - component: {fileID: 283043025}
   m_Layer: 0
   m_Name: down hit box
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -612,8 +613,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e5bffd2cae222488bf830336437d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 5
+  thrust: 4
   knockTime: 0.2
+  damage: 1
 --- !u!1 &355765155
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +863,7 @@ GameObject:
   - component: {fileID: 608996283}
   m_Layer: 0
   m_Name: right hit box
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -944,8 +946,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e5bffd2cae222488bf830336437d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 5
+  thrust: 4
   knockTime: 0.2
+  damage: 1
 --- !u!1 &875188147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,6 +1145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  maxHealth: {fileID: 11400000, guid: 73153477cc0440f40b76927c115def26, type: 2}
   health: 2
   enemyName: Louie the Log
   baseAttack: 1
@@ -1210,6 +1214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 4
   knockTime: 0.2
+  damage: 0
 --- !u!1 &919185711
 GameObject:
   m_ObjectHideFlags: 0
@@ -44633,7 +44638,7 @@ GameObject:
   - component: {fileID: 1729543468}
   m_Layer: 0
   m_Name: left hit box
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44715,8 +44720,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e5bffd2cae222488bf830336437d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 5
+  thrust: 4
   knockTime: 0.2
+  damage: 1
 --- !u!1 &1810578756
 GameObject:
   m_ObjectHideFlags: 0
