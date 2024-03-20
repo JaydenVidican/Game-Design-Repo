@@ -17,7 +17,7 @@ public class begin : MonoBehaviour
     {
          if (Input.GetKeyDown(KeyCode.Return))
         {
-            levelManager.LoadLevel("Win");
+            levelManager.LoadLevel("Room 1");
         }
     }
 }

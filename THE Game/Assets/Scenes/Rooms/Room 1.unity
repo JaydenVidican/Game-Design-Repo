@@ -45037,7 +45037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 938894732}
-  smoothing: 0.005
+  smoothing: 0.1
   maxPosition: {x: 25.25, y: 17}
   minPosition: {x: -29.25, y: -12}
 --- !u!4 &1912997260 stripped
