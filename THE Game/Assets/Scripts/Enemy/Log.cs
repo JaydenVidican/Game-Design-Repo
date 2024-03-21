@@ -31,11 +31,12 @@ public class Log : Enemy
         {
             if(currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger)
             {
+                anim.SetBool("wakeUp", true);
+                //yield return new WaitForSeconds(.3f);
                 Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
                 changeAnim(temp - transform.position);
                 myRigidbody.MovePosition(temp);
                 ChangeState(EnemyState.walk);
-                anim.SetBool("wakeUp", true);
             }
             else
             {
