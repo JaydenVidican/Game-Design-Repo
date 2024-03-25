@@ -21,6 +21,8 @@ public class MovementController : MonoBehaviour
     private Vector3 change; //creates vector object
     private Animator animator; //creates animator object
     private bool canSprint = true; //tells if user can sprint (if stamina added later on)
+    public FloatValue currentHealth;
+    public GameSignal playerHealthSignal;
 
 
     void Start()
@@ -90,9 +92,18 @@ public class MovementController : MonoBehaviour
         );
     }
 
-    public void Knock(float knockTime)
+    public void Knock(float knockTime, float damage)
     {
-        StartCoroutine(KnockCo(knockTime));
+        currentHealth.RuntimeValue -= damage;
+        playerHealthSignal.Raise();
+        if (currentHealth.RuntimeValue > 0)
+        {
+            StartCoroutine(KnockCo(knockTime));
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
     }
     private IEnumerator KnockCo(float knockTime)
     {
