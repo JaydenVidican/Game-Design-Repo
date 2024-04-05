@@ -23,6 +23,7 @@ public class MovementController : MonoBehaviour
     private bool canSprint = true; //tells if user can sprint (if stamina added later on)
     public FloatValue currentHealth;
     public GameSignal playerHealthSignal;
+    public VectorValue startingPosition;
 
 
     void Start()
@@ -32,6 +33,7 @@ public class MovementController : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>(); //accesses rigig body component of player
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
+        transform.position = startingPosition.initialValue;
     }
 
     void Update() //checks every frame if player is holding spring key
