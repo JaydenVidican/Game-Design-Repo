@@ -416,6 +416,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 968226907}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &244847364 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6827085583311593786, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+  m_PrefabInstance: {fileID: 8827464245178768409}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &355765155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,6 +1152,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4301581137860410746, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
   m_PrefabInstance: {fileID: 8827464245178768409}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &938894738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5595844931361287819, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+  m_PrefabInstance: {fileID: 8827464245178768409}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0c6e4f599f6d6419fadf6f70780889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &968226903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,11 +1690,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   context: {fileID: 11400000, guid: 985cca7575789ba47a6bc184879253d4, type: 2}
-  contents: {fileID: 0}
+  contents: {fileID: 11400000, guid: e45b7e1744ef415458a0f198975d2c43, type: 2}
+  playerInventory: {fileID: 11400000, guid: 451d219140fd88043b818ce260702a08, type: 2}
   isOpen: 0
-  raiseItem: {fileID: 0}
-  dialogueBox: {fileID: 0}
-  dialogueText: {fileID: 0}
+  raiseItem: {fileID: 11400000, guid: 4d21b9a61f391df42958fa3a6cc476b4, type: 2}
+  dialogueBox: {fileID: 1111354609489330527}
+  dialogueText: {fileID: 237090185871958607}
 --- !u!61 &1139106658
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -102969,6 +102986,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3979659265368465757, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979659265368465757, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979659265368465757, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 938894738}
+    - target: {fileID: 3979659265368465757, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979659265368465757, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RaiseItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979659265368465757, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MovementController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979659265368465757, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4301581137860410746, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5
@@ -103013,6 +103058,18 @@ PrefabInstance:
       propertyPath: startingPosition
       value: 
       objectReference: {fileID: 11400000, guid: 11c1763d77c97854890452194eae635b, type: 2}
+    - target: {fileID: 5595844931361287819, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: receivedItemSprite
+      value: 
+      objectReference: {fileID: 244847364}
+    - target: {fileID: 6827085583311593786, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827085583311593786, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1015887109
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

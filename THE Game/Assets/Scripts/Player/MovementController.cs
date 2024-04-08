@@ -81,9 +81,21 @@ public class MovementController : MonoBehaviour
 
     public void RaiseItem()
     {
-        animator.SetBool("recieve item", true);
-        currentState = PlayerState.interact;
-        receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
+        if (playerInventory.currentItem != null)
+        {
+            if(currentState != PlayerState.interact)
+            {
+                animator.SetBool("recieve item", true);
+                currentState = PlayerState.interact;
+                receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
+            }
+            else
+            {
+                animator.SetBool("recieve item", false);
+                currentState = PlayerState.idle;
+                receivedItemSprite.sprite = null;
+            }
+        }
     }
     void UpdateAnimationAndMove() //moves character and updates the animation
     {
