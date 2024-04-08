@@ -24,6 +24,8 @@ public class MovementController : MonoBehaviour
     public FloatValue currentHealth;
     public GameSignal playerHealthSignal;
     public VectorValue startingPosition;
+    public Inventory playerInventory;
+    public SpriteRenderer receivedItemSprite;
 
 
     void Start()
@@ -46,7 +48,10 @@ public class MovementController : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+        if (currentState == PlayerState.interact)
+        {
+            return;
+        }
         change = Vector3.zero; 
         change.x = Input.GetAxisRaw("Horizontal"); //gets horizontal movement
         change.y = Input.GetAxisRaw("Vertical"); //gets vertical movement
@@ -66,10 +71,20 @@ public class MovementController : MonoBehaviour
         currentState = PlayerState.attack;
         yield return null;
         animator.SetBool("attacking", false);
-        yield return new WaitForSeconds(.5f);
-        currentState = PlayerState.walk;
+        yield return new WaitForSeconds(.4f); //modify with animation length
+        if (currentState != PlayerState.interact)
+        {
+            currentState = PlayerState.walk;
+        }
     }
 
+
+    public void RaiseItem()
+    {
+        animator.SetBool("recieve item", true);
+        currentState = PlayerState.interact;
+        receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
+    }
     void UpdateAnimationAndMove() //moves character and updates the animation
     {
         if(change != Vector3.zero) // checks that player speed is not zero (is moving)

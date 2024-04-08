@@ -4,14 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Sign : MonoBehaviour
+public class Sign : Interactable
 {
-    
     public GameObject dialogueBox;
     public TMP_Text dialogueText;
     public string dialogue;
-    public bool dialogueActive;
-    private bool playerInRange;
 
     void Start()
     {
@@ -35,18 +32,11 @@ public class Sign : MonoBehaviour
 
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = true;
-        }
-    }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.isTrigger)
         {
+            context.Raise();
             playerInRange = false;
             dialogueBox.SetActive(false);
         }

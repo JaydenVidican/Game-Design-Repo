@@ -2648,11 +2648,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4301581137860410746, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4301581137860410746, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.27
       objectReference: {fileID: 0}
     - target: {fileID: 4301581137860410746, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4249,6 +4249,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8490899613982134167, guid: 1751314bb5fe18e4fadb2f18f1847b6e, type: 3}
+      propertyPath: sceneToLoad
+      value: Room 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8490899613982134167, guid: 1751314bb5fe18e4fadb2f18f1847b6e, type: 3}
       propertyPath: playerStorage
       value: 

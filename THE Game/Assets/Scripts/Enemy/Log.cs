@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Log : Enemy
 {
+    private Rigidbody2D myRigidbody;
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
     public Transform homePosition;
-    private Rigidbody2D myRigidbody;
     public Animator anim;
 
     void Start()
@@ -37,10 +37,6 @@ public class Log : Enemy
                 changeAnim(temp - transform.position);
                 myRigidbody.MovePosition(temp);
                 ChangeState(EnemyState.walk);
-            }
-            else
-            {
-                anim.SetBool("wakeUp", false);
             }
         }
         else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
