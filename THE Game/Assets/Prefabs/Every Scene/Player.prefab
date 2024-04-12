@@ -134,7 +134,7 @@ MonoBehaviour:
   speed: 5
   currentHealth: {fileID: 11400000, guid: abdb471e9ead712478e5e4c8acc2c60a, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: 5272259de9d9f654b80115603fcb2e2a, type: 2}
-  startingPosition: {fileID: 0}
+  startingPosition: {fileID: 11400000, guid: 11c1763d77c97854890452194eae635b, type: 2}
   playerInventory: {fileID: 11400000, guid: 451d219140fd88043b818ce260702a08, type: 2}
   receivedItemSprite: {fileID: 6827085583311593786}
 --- !u!50 &7576247904894409424
