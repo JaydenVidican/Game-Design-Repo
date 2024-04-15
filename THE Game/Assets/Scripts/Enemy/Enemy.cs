@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public enum EnemyState
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
+    public GameObject deathEffect;
 
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            DeathEffect();
             this.gameObject.SetActive(false);
         }
     }
@@ -45,6 +48,14 @@ public class Enemy : MonoBehaviour
             myRigidbody.velocity = Vector2.zero;
             currentState = EnemyState.idle;
             myRigidbody.velocity = Vector2.zero;
+        }
+    }
+    private void DeathEffect()
+    {
+        if(deathEffect != null)
+        {
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
         }
     }
 }

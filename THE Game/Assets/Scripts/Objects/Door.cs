@@ -13,14 +13,34 @@ public class Door : Interactable
     [Header("Door variables")]
     public DoorType thisDoorType;
     public bool open = false;
-    void Start()
-    {
-        
-    }
+    public Inventory playerInventory;
+    public SpriteRenderer doorSprite;
+    public BoxCollider2D physicsCollider;
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if(playerInRange && thisDoorType == DoorType.key)
+            {
+                if (playerInventory.numberOfKeys > 0)
+                {
+                    playerInventory.numberOfKeys--;
+                    Open();
+                }
+
+            }
+        }
+    }
+    public void Open()
+    {
+        doorSprite.enabled = false;
+        open = true;
+        physicsCollider.enabled = false;
+    }
+    public void Close()
+    {
+
     }
 }
