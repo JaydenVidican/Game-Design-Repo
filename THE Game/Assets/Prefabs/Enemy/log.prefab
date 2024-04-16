@@ -246,7 +246,8 @@ MonoBehaviour:
   enemyName: Louie the Log
   baseAttack: 1
   moveSpeed: 1.5
-  target: {fileID: 0}
+  deathEffect: {fileID: 4559707314824671413, guid: 3c2dfe895c148f3408625441580100cb, type: 3}
+  target: {fileID: 4301581137860410746, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
   chaseRadius: 8
   attackRadius: 0.5
   homePosition: {fileID: 0}
