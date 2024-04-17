@@ -14,56 +14,69 @@ public class TreasureChest : Interactable
 
     [Header("Signals and Dialog")]
     public GameSignal raiseItem;
-    public GameObject dialogueBox;
-    public TMP_Text dialogueText;
+    public GameObject dialogBox;
+    public TMP_Text dialogText;
 
     [Header("Animation")]
     private Animator anim;
 
-    void Start()
-    {
+	// Use this for initialization
+	void Start () {
         anim = GetComponent<Animator>();
         isOpen = storedOpen.RuntimeValue;
-        if (isOpen)
+        if(isOpen)
         {
             anim.SetBool("opened", true);
         }
     }
-
-    
-    void Update()
-    {
+	
+	// Update is called once per frame
+	void Update () {
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
-            if (!isOpen)
+            if(!isOpen)
             {
+                // Open the chest
                 OpenChest();
-            }
-            else
+            }else
             {
-                isOpened();
+                Debug.Log("WHY");
+                // Chest is already open
+                ChestAlreadyOpen();
             }
+        }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log(playerInRange);
         }
     }
 
     public void OpenChest()
     {
-        dialogueBox.SetActive(true);
-        dialogueText.text = contents.itemDescription;
-        playerInventory.currentItem = contents;
+        // Dialog window on
+        dialogBox.SetActive(true);
+        // dialog text = contents text
+        dialogText.text = contents.itemDescription;
+        // add contents to the inventory
         playerInventory.AddItem(contents);
+        playerInventory.currentItem = contents;
+        // Raise the signal to the player to animate
         raiseItem.Raise();
+        // raise the context clue
         context.Raise();
+        // set the chest to opened
         isOpen = true;
         anim.SetBool("opened", true);
         storedOpen.RuntimeValue = isOpen;
     }
-    public void isOpened()
+
+    public void ChestAlreadyOpen()
     {
-        dialogueBox.SetActive(false);
-        
+        // Dialog off
+        dialogBox.SetActive(false);
+        playerInRange = false;
+        // raise the signal to the player to stop animating
         raiseItem.Raise();
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -74,6 +87,7 @@ public class TreasureChest : Interactable
             playerInRange = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger && !isOpen)

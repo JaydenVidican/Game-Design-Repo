@@ -1105,8 +1105,8 @@ MonoBehaviour:
   isOpen: 0
   storedOpen: {fileID: 11400000, guid: f4842d0fccd7f5c4e9053f7075566d25, type: 2}
   raiseItem: {fileID: 11400000, guid: 4d21b9a61f391df42958fa3a6cc476b4, type: 2}
-  dialogueBox: {fileID: 1111354609489330527}
-  dialogueText: {fileID: 237090185871958607}
+  dialogBox: {fileID: 1111354609489330527}
+  dialogText: {fileID: 237090185871958607}
 --- !u!61 &1139106658
 BoxCollider2D:
   m_ObjectHideFlags: 0
