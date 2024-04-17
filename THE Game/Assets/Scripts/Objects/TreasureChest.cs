@@ -6,16 +6,28 @@ using TMPro;
 
 public class TreasureChest : Interactable
 {
+    [Header("Contents")]
     public Item contents;
     public Inventory playerInventory;
     public bool isOpen;
+    public BoolValue storedOpen;
+
+    [Header("Signals and Dialog")]
     public GameSignal raiseItem;
     public GameObject dialogueBox;
     public TMP_Text dialogueText;
+
+    [Header("Animation")]
     private Animator anim;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        isOpen = storedOpen.RuntimeValue;
+        if (isOpen)
+        {
+            anim.SetBool("opened", true);
+        }
     }
 
     
@@ -44,6 +56,7 @@ public class TreasureChest : Interactable
         context.Raise();
         isOpen = true;
         anim.SetBool("opened", true);
+        storedOpen.RuntimeValue = isOpen;
     }
     public void isOpened()
     {

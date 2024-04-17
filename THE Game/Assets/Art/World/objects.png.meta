@@ -1365,10 +1365,10 @@ TextureImporter:
       name: objects_59
       rect:
         serializedVersion: 2
-        x: 2
-        y: 243
-        width: 11
-        height: 11
+        x: 0
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1386,10 +1386,10 @@ TextureImporter:
       name: objects_60
       rect:
         serializedVersion: 2
-        x: 18
-        y: 243
-        width: 10
-        height: 11
+        x: 16
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1407,10 +1407,10 @@ TextureImporter:
       name: objects_61
       rect:
         serializedVersion: 2
-        x: 51
-        y: 243
-        width: 10
-        height: 11
+        x: 48
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2814,9 +2814,9 @@ TextureImporter:
       name: objects_138
       rect:
         serializedVersion: 2
-        x: 7
+        x: 64
         y: 4
-        width: 120
+        width: 64
         height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3171,12 +3171,12 @@ TextureImporter:
       name: objects_145
       rect:
         serializedVersion: 2
-        x: 33
-        y: 242
-        width: 12
-        height: 13
+        x: 32
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3300,51 +3300,51 @@ TextureImporter:
       objects_56: -742336014
       objects_57: -673913562
       objects_58: -215405727
-      objects_59: -271218146
-      objects_6: -706378506
-      objects_60: 216441040
-      objects_61: -1735621700
-      objects_62: -365038233
-      objects_63: -2067599276
-      objects_64: 526566367
-      objects_65: 156351626
-      objects_66: 716368736
-      objects_67: 174201257
-      objects_68: -1097575276
-      objects_69: 1491541076
-      objects_7: 1915640783
-      objects_70: -1150293297
-      objects_71: -1145281499
-      objects_72: 85604969
-      objects_73: -990195158
-      objects_74: 116461924
-      objects_75: -753212577
-      objects_76: -1804379495
-      objects_77: -1391468298
-      objects_78: -2145686642
-      objects_79: -543841033
-      objects_8: -1469944483
-      objects_80: -1349877111
-      objects_81: 428497564
-      objects_82: 283362169
-      objects_83: 1638547232
-      objects_84: -374879777
-      objects_85: -1407513525
-      objects_86: -1326882139
-      objects_87: -1256436738
-      objects_88: -1108656557
-      objects_89: -261097079
-      objects_9: -2083899398
-      objects_90: 1922401371
-      objects_91: -1415301869
-      objects_92: 1435945983
-      objects_93: 550571261
-      objects_94: -1684523423
-      objects_95: 1783342106
-      objects_96: -935787274
-      objects_97: 390533451
-      objects_98: -1538400780
-      objects_99: -775633011
+      objects_59: -706378506
+      objects_6: 216441040
+      objects_60: -1735621700
+      objects_61: -365038233
+      objects_62: -2067599276
+      objects_63: 526566367
+      objects_64: 156351626
+      objects_65: 716368736
+      objects_66: 174201257
+      objects_67: -1097575276
+      objects_68: 1491541076
+      objects_69: 1915640783
+      objects_7: -1150293297
+      objects_70: -1145281499
+      objects_71: 85604969
+      objects_72: -990195158
+      objects_73: 116461924
+      objects_74: -753212577
+      objects_75: -1804379495
+      objects_76: -1391468298
+      objects_77: -2145686642
+      objects_78: -543841033
+      objects_79: -1469944483
+      objects_8: -1349877111
+      objects_80: 428497564
+      objects_81: 283362169
+      objects_82: 1638547232
+      objects_83: -374879777
+      objects_84: -1407513525
+      objects_85: -1326882139
+      objects_86: -1256436738
+      objects_87: -1108656557
+      objects_88: -261097079
+      objects_89: -2083899398
+      objects_9: 1922401371
+      objects_90: -1415301869
+      objects_91: 1435945983
+      objects_92: 550571261
+      objects_93: -1684523423
+      objects_94: 1783342106
+      objects_95: -935787274
+      objects_96: 390533451
+      objects_97: -1538400780
+      objects_98: -775633011
+      objects_99: -271218146
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -6,9 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
+    [Header("New Scene Variables")]
     public string sceneToLoad;
     public Vector2 playerPosition;
     public VectorValue playerStorage;
+    public Vector2 cameraNewMax;
+    public Vector2 cameraNewMin;
+    public VectorValue cameraMin;
+    public VectorValue cameraMax;
+
+    [Header("Transition Effects")]
     public GameObject fadeInPanel;
     public GameObject fadeOutPanel;
     public float fadeWait;
@@ -32,17 +39,29 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
+    public void begin()
+    {
+        sceneToLoad = "Room 1";
+        Debug.Log("Step 1");
+       SceneManager.LoadScene("Room 1");
+    }
     public IEnumerator FadeCo()
     {
         if (fadeOutPanel != null)
         {
             Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity);
             yield return new WaitForSeconds(fadeWait);
+            ResetCameraBounds();
             AsyncOperation AsyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
             while(!AsyncOperation.isDone)
             {
                 yield return null;
             }
         }
+    }
+    public void ResetCameraBounds()
+    {
+        cameraMax.initialValue = cameraNewMax;
+        cameraMin.initialValue = cameraNewMin;
     }
 }

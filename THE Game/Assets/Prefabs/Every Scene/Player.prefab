@@ -137,6 +137,7 @@ MonoBehaviour:
   startingPosition: {fileID: 11400000, guid: 11c1763d77c97854890452194eae635b, type: 2}
   playerInventory: {fileID: 11400000, guid: 451d219140fd88043b818ce260702a08, type: 2}
   receivedItemSprite: {fileID: 6827085583311593786}
+  playerHit: {fileID: 11400000, guid: f7e9088179820d44c856a72ed9797603, type: 2}
 --- !u!50 &7576247904894409424
 Rigidbody2D:
   serializedVersion: 4
@@ -161,7 +162,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &2547747484404292032
@@ -756,8 +757,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1015887109
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -785,7 +786,19 @@ MonoBehaviour:
   signal: {fileID: 11400000, guid: 4d21b9a61f391df42958fa3a6cc476b4, type: 2}
   signalEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5595844931361287819}
+        m_TargetAssemblyTypeName: MovementController, Assembly-CSharp
+        m_MethodName: RaiseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9173883507377307689
 GameObject:
   m_ObjectHideFlags: 0

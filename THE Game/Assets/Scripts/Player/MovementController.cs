@@ -26,6 +26,7 @@ public class MovementController : MonoBehaviour
     public VectorValue startingPosition;
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite;
+    public GameSignal playerHit;
 
 
     void Start()
@@ -138,6 +139,7 @@ public class MovementController : MonoBehaviour
     {
         if (myRigidbody != null)
         {
+            playerHit.Raise();
             yield return new WaitForSeconds(knockTime);
             myRigidbody.velocity = Vector2.zero;
             currentState = PlayerState.idle;

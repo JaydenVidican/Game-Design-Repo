@@ -65,7 +65,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09767258, y: -0.15348577}
+  m_Offset: {x: -0.093986034, y: -0.17249322}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0139356, y: 0.69302845}
+  m_Size: {x: 1.2918558, y: 1.173698}
   m_EdgeRadius: 0
 --- !u!114 &-8490899613982134167
 MonoBehaviour:
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017cd229d9ddfe9448d544c01aea83e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: Room 3
   playerPosition: {x: 0, y: 0}
   playerStorage: {fileID: 11400000, guid: 11c1763d77c97854890452194eae635b, type: 2}
   fadeInPanel: {fileID: 6018288322996391716, guid: 2222802cda482f34095ae6b83ed87681, type: 3}

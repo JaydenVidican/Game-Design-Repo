@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class begin : MonoBehaviour
 {
-    LevelManager levelManager = new LevelManager();
+    SceneTransition levelManager = new SceneTransition();
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class begin : MonoBehaviour
     {
          if (Input.GetKeyDown(KeyCode.Return))
         {
-            levelManager.LoadLevel("Room 1");
+            levelManager.begin();
         }
     }
 }
