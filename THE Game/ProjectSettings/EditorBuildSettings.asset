@@ -6,30 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Start.unity
+    path: Assets/Scene/Start.unity
     guid: 08ac7492ebb62224c994ee5ab3a49935
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 1.unity
+    path: Assets/Scene/Rooms/Room 1.unity
     guid: 861aac14e64a9e342934bbdbb0edb78d
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 2.unity
+    path: Assets/Scene/Rooms/Room 2.unity
     guid: f5ed13de03748d44f8fb8db25bc9e94f
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 3.unity
+    path: Assets/Scene/Rooms/Room 3.unity
     guid: b2173b50cbd1e0649b0944dd740d08db
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 4.unity
+    path: Assets/Scene/Rooms/Room 4.unity
     guid: 096f9ad03a676c94d97109b96e79192a
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 5.unity
+    path: Assets/Scene/Rooms/Room 5.unity
     guid: 2a4dd758c920de5408e2b92e59ff07a6
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 6.unity
+    path: Assets/Scene/Rooms/Room 6.unity
     guid: dc34b08bf24cf56408093652e506ced9
   - enabled: 1
-    path: Assets/Scenes/Win.unity
+    path: Assets/Scene/Win.unity
     guid: 35fbf53f5b59d554a87ff5a063d23963
   - enabled: 1
-    path: Assets/Scenes/Lose.unity
+    path: Assets/Scene/Lose.unity
     guid: 5d70e5b1b2353464fbf53558f979ab0f
   m_configObjects: {}
