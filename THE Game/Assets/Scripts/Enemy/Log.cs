@@ -5,10 +5,14 @@ using UnityEngine;
 public class Log : Enemy
 {
     protected Rigidbody2D myRigidbody;
+
+    [Header("Target Variables")]
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
     public Transform homePosition;
+
+    [Header("Animator")]
     public Animator anim;
 
     void Start()
@@ -45,12 +49,12 @@ public class Log : Enemy
             anim.SetBool("wakeUp", false);
         }
     }
-    private void setAnimFLoat(Vector2 setVector)
+    public void setAnimFLoat(Vector2 setVector)
     {
         anim.SetFloat("moveX", setVector.x);
         anim.SetFloat("moveY", setVector.y);
     }
-    protected void changeAnim(Vector2 direction)
+    public void changeAnim(Vector2 direction)
     {
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
@@ -75,7 +79,7 @@ public class Log : Enemy
             }
         }
     }
-    private void ChangeState(EnemyState newState)
+    public void ChangeState(EnemyState newState)
     {
         if (currentState != newState)
             currentState = newState;

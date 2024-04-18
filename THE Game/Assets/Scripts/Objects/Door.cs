@@ -12,10 +12,11 @@ public class Door : Interactable
 {
     [Header("Door variables")]
     public DoorType thisDoorType;
-    public bool open = false;
+    private bool open = false;
     public Inventory playerInventory;
     public SpriteRenderer doorSprite;
     public BoxCollider2D physicsCollider;
+    public GameObject trigger;
 
 
     private void Update()
@@ -32,6 +33,9 @@ public class Door : Interactable
 
             }
         }
+        if (open)
+            trigger.SetActive(false);
+        
     }
     public void Open()
     {

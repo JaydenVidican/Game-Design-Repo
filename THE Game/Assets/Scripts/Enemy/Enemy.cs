@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Enemy Stats")]
     public FloatValue maxHealth;
-    public float health;
+    protected float health;
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
