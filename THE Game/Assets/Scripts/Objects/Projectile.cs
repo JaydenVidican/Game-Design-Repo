@@ -41,6 +41,9 @@ public class Projectile : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(this.gameObject);
+        if (!other.isTrigger)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
