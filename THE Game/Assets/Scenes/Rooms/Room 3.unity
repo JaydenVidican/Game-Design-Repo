@@ -29622,6 +29622,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8434732877221737808, guid: 5d35107676368384991089ae05e81c47, type: 3}
   m_PrefabInstance: {fileID: 828329759}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &828329762 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6150550064733023063, guid: 5d35107676368384991089ae05e81c47, type: 3}
+  m_PrefabInstance: {fileID: 828329759}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15415e552bc087f40b93736349a11b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &847964075
 GameObject:
   m_ObjectHideFlags: 0
@@ -40881,7 +40892,7 @@ MonoBehaviour:
   - {fileID: 1717594556}
   - {fileID: 1508851377}
   - {fileID: 1010639140}
-  - {fileID: 0}
+  - {fileID: 828329762}
   pots: []
   doors:
   - {fileID: 181841099}

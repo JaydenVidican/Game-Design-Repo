@@ -70,9 +70,9 @@ public class MovementController : MonoBehaviour
     {
         animator.SetBool("attacking", true);
         currentState = PlayerState.attack;
-        yield return null;
+        yield return new WaitForSeconds(.1f);
         animator.SetBool("attacking", false);
-        yield return new WaitForSeconds(.4f); //modify with animation length
+        yield return new WaitForSeconds(.3f); //modify with animation length
         if (currentState != PlayerState.interact)
         {
             currentState = PlayerState.walk;
