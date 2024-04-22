@@ -42,8 +42,7 @@ public class SceneTransition : MonoBehaviour
     public void begin()
     {
         sceneToLoad = "Room 1";
-        Debug.Log("Step 1");
-       SceneManager.LoadScene("Room 1");
+       SceneManager.LoadScene(sceneToLoad);
     }
     public IEnumerator FadeCo()
     {
@@ -63,5 +62,11 @@ public class SceneTransition : MonoBehaviour
     {
         cameraMax.initialValue = cameraNewMax;
         cameraMin.initialValue = cameraNewMin;
+    }
+
+    public void lose()
+    {
+        sceneToLoad = "Lose";
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

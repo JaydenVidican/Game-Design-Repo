@@ -27,6 +27,7 @@ public class MovementController : MonoBehaviour
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite;
     public GameSignal playerHit;
+    SceneTransition levelManager = new SceneTransition();
 
 
     void Start()
@@ -133,6 +134,8 @@ public class MovementController : MonoBehaviour
         else
         {
             this.gameObject.SetActive(false);
+            levelManager.lose();
+            
         }
     }
     private IEnumerator KnockCo(float knockTime)

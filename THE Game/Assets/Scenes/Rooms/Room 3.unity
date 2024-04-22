@@ -40954,7 +40954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   context: {fileID: 11400000, guid: 985cca7575789ba47a6bc184879253d4, type: 2}
-  thisDoorType: 0
+  thisDoorType: 2
   playerInventory: {fileID: 11400000, guid: 451d219140fd88043b818ce260702a08, type: 2}
   doorSprite: {fileID: 8374441414363217621}
   physicsCollider: {fileID: 2376270237380522959}
