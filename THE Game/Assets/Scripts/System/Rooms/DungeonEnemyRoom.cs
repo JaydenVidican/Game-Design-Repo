@@ -46,7 +46,8 @@ public class DungeonEnemyRoom : DungeonRoom
             {
                 ChangeActivation(pots[i], true);
             }
-            CloseDoors();
+            virtualCamera.SetActive(true);
+            StartCoroutine(Delay());
         }
         
     }
@@ -63,14 +64,19 @@ public class DungeonEnemyRoom : DungeonRoom
             {
                 ChangeActivation(pots[i], false);
             }
+            virtualCamera.SetActive(false);
         }
     }
 
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(1f);
+        CloseDoors();
+    }
     public void CloseDoors()
     {
         for(int i = 0; i < doors.Length; i++)
         {
-            Debug.Log(i);
             doors[i].Close();
         }
         
