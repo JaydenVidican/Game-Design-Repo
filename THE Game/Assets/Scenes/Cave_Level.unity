@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &60250762
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3149741640463069879, guid: b81b13c9292119443af4704467a76cf5, type: 3}
+      propertyPath: m_Name
+      value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186590574400445225, guid: b81b13c9292119443af4704467a76cf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.151176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186590574400445225, guid: b81b13c9292119443af4704467a76cf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.6851845
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186590574400445225, guid: b81b13c9292119443af4704467a76cf5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186590574400445225, guid: b81b13c9292119443af4704467a76cf5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186590574400445225, guid: b81b13c9292119443af4704467a76cf5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186590574400445225, guid: b81b13c9292119443af4704467a76cf5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186590574400445225, guid: b81b13c9292119443af4704467a76cf5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186590574400445225, guid: b81b13c9292119443af4704467a76cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186590574400445225, guid: b81b13c9292119443af4704467a76cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186590574400445225, guid: b81b13c9292119443af4704467a76cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b81b13c9292119443af4704467a76cf5, type: 3}
 --- !u!1001 &72543799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140178,6 +140235,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   homePosition: {x: 0, y: 0}
   deathEffect: {fileID: 4559707314824671413, guid: 3c2dfe895c148f3408625441580100cb, type: 3}
+  thisLoot: {fileID: 0}
   roomSignal: {fileID: 0}
   target: {fileID: 1908534391}
   chaseRadius: 4
@@ -140336,3 +140394,4 @@ SceneRoots:
   - {fileID: 1971816232}
   - {fileID: 2010238494}
   - {fileID: 2097220671}
+  - {fileID: 60250762}

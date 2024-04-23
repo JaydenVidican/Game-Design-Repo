@@ -37,8 +37,8 @@ public class Room : MonoBehaviour
             {
                 ChangeActivation(pots[i], false);
             }
+            virtualCamera.SetActive(false);
         }
-        virtualCamera.SetActive(false);
     }
 
     public void ChangeActivation(Component component, bool activation)
