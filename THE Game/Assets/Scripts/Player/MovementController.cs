@@ -101,7 +101,7 @@ public class MovementController : MonoBehaviour
     }
     void UpdateAnimationAndMove() //moves character and updates the animation
     {
-        if(change != Vector3.zero) // checks that player speed is not zero (is moving)
+        if(change != Vector3.zero)
         {
             MoveCharacter();
 

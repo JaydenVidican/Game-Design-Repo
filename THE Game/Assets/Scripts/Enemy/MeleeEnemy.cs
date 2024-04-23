@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class MeleeEnemy : Log
 {
@@ -30,8 +29,10 @@ public class MeleeEnemy : Log
     {
         currentState = EnemyState.attack;
         anim.SetBool("attack", true);
+        yield return new WaitForSeconds(.5f);
+        currentState = EnemyState.stagger;
+        anim.SetBool("attack", false);
         yield return new WaitForSeconds(2f);
         currentState = EnemyState.walk;
-        anim.SetBool("attack", false);
     }
 }
