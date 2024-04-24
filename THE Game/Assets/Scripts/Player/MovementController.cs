@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 
@@ -27,6 +28,8 @@ public class MovementController : MonoBehaviour
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite;
     public GameSignal playerHit;
+    public GameSignal reduceMagic;
+    public GameObject projectile;
     SceneTransition levelManager = new SceneTransition();
 
 
@@ -61,6 +64,13 @@ public class MovementController : MonoBehaviour
         {
             StartCoroutine(AttackCo());
         }
+        else if (Input.GetButtonDown("Second Weapon") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
+        {
+            if(playerInventory.currentMagic > 0)
+            {
+                StartCoroutine(SecoundAttackCo());
+            }
+        }
         else if (currentState == PlayerState.walk || currentState == PlayerState.idle)
         {
             UpdateAnimationAndMove();
@@ -80,6 +90,32 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    private IEnumerator SecoundAttackCo()
+    {
+        currentState = PlayerState.attack;
+        yield return null;
+        MakeArrow();
+        yield return new WaitForSeconds(.3f); //modify with animation length
+        if (currentState != PlayerState.interact)
+        {
+            currentState = PlayerState.walk;
+        }
+    }
+
+    private void MakeArrow()
+    {
+            Vector2 temp = new Vector2 (animator.GetFloat("moveX"), animator.GetFloat("moveY"));
+            Arrow arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>();
+            arrow.Setup(temp, ChooseArrowDirection());
+            playerInventory.reduceMagic(arrow.magicCost);
+            reduceMagic.Raise();
+    }
+
+    Vector3 ChooseArrowDirection()
+    {
+        float temp = Mathf.Atan2(animator.GetFloat("moveY"), animator.GetFloat("moveX")) * Mathf.Rad2Deg;
+        return new Vector3(0, 0, temp);
+    }
 
     public void RaiseItem()
     {

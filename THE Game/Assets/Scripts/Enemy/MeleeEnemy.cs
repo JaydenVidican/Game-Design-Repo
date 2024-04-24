@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeEnemy : Log
+public class MeleeEnemy : Enemy
 {
+
     public override void CheckDistance()
     {
-        if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
+         if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
             if(currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger)
             {

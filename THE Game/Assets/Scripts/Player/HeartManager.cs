@@ -17,6 +17,7 @@ public class HeartManager : MonoBehaviour
 
     void Start()
     {
+        heartContainers.initialValue = playerCurrentHealth.RuntimeValue / 4;
         InitHearts();
     }
 

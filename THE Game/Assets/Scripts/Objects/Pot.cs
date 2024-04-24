@@ -19,14 +19,11 @@ public class Pot : MonoBehaviour
     }
     private void MakeLoot()
     {
-        Debug.Log("Step 1");
         if (thisLoot != null)
         {
-            Debug.Log("Step 2");
             PowerUp current = thisLoot.LootPowerup();
             if (current != null)
             {
-                Debug.Log("Step 3");
                 Instantiate(current.gameObject, transform.position, Quaternion.identity);
             }
         }

@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     [Header("Movement")]
     public float speed;
+    [HideInInspector]
     public Vector2 direction;
 
     [Header("Lifetime")]
@@ -39,9 +40,9 @@ public class Projectile : MonoBehaviour
         myRigidbody.velocity = initialVel * speed;
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.isTrigger)
+        if (other.gameObject.CompareTag("Player"))
         {
             Destroy(this.gameObject);
         }
