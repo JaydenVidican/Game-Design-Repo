@@ -242,14 +242,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   maxHealth: {fileID: 11400000, guid: 42d4c7003cd73e3468cd4e3b8036e4a0, type: 2}
-  enemyName: gun
   baseAttack: 0
   moveSpeed: 0
+  homePosition: {x: 18.6, y: -17.2}
   deathEffect: {fileID: 4559707314824671413, guid: 3c2dfe895c148f3408625441580100cb, type: 3}
+  thisLoot: {fileID: 0}
+  roomSignal: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 6
   attackRadius: 0
-  homePosition: {fileID: 0}
   anim: {fileID: 0}
   projectile: {fileID: 6614715825928363563, guid: 3a9747cb311557143b7dc25072f781f3, type: 3}
   fireDelay: 1

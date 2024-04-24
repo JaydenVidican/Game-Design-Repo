@@ -8,6 +8,8 @@ public class TurretLog : Log
     public float fireDelay;
     private float delayCounter;
     private bool canFire = true;
+    private Vector3 tempVector;
+    private GameObject current;
 
     private void Update()
     {
@@ -27,8 +29,8 @@ public class TurretLog : Log
             {
                 if(canFire)
                 {
-                Vector3 tempVector = target.transform.position - transform.position;
-                GameObject current = Instantiate(projectile, transform.position, Quaternion.identity);
+                tempVector = target.transform.position - transform.position;
+                current = Instantiate(projectile, transform.position, Quaternion.identity);
                 current.GetComponent<Projectile>().Launch(tempVector);
                 canFire = false;
                 ChangeState(EnemyState.walk);
@@ -40,5 +42,10 @@ public class TurretLog : Log
         {
             anim.SetBool("wakeUp", false);
         }
+    }
+
+    public void reflect()
+    {
+        current.GetComponent<Projectile>().Launch(-tempVector);
     }
 }

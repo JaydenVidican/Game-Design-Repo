@@ -7,6 +7,7 @@ TagManager:
   - Breakable
   - Enemy
   - Sword
+  - Enemy Projectile
   layers:
   - Default
   - TransparentFX
