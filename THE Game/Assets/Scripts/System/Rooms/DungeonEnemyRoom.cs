@@ -83,7 +83,6 @@ public class DungeonEnemyRoom : DungeonRoom
     }
     public void OpenDoors()
     {
-        Debug.Log("Test");
         for(int i = 0; i < doors.Length; i++)
         {
             doors[i].Open();

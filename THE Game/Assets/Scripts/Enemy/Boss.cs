@@ -69,7 +69,8 @@ public class Boss : Enemy
 	void Die()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
-		Destroy(gameObject);
+		
+        Destroy(gameObject);
 	}
 
 }
