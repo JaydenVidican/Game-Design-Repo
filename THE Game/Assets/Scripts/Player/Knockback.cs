@@ -6,16 +6,35 @@ public class Knockback : MonoBehaviour
 {
     public float thrust;
     public float knockTime;
+    [HideInInspector]
     public float damage;
     
-    
+    void Update()
+    {
+        if (this.gameObject.CompareTag("Enemy"))
+        {
+            damage = GetComponent<Enemy>().baseAttack;
+        }
+        else if (this.gameObject.CompareTag("Enemy Sword"))
+        {
+            damage = this.gameObject.transform.parent.GetComponent<Enemy>().baseAttack;
+        }
+        else if (this.gameObject.CompareTag("Sword"))
+        {
+            damage = this.gameObject.transform.parent.GetComponent<MovementController>().baseAttack;
+        }
+        else
+        {
+            damage = 1;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Breakable") && this.gameObject.CompareTag("Sword"))
         {
             other.GetComponent<Pot>().Smash();
         }
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player") && (this.gameObject.CompareTag("Sword") || this.gameObject.CompareTag("Enemy Projectile")))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player") && (this.gameObject.CompareTag("Sword") || this.gameObject.CompareTag("Enemy Projectile") || this.gameObject.CompareTag("Enemy Sword")))
         {
             Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
             if (hit != null)
@@ -41,7 +60,7 @@ public class Knockback : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy Projectile") && this.gameObject.CompareTag("Sword"))
         {
             
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
         }
     }
 }

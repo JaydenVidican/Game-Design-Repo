@@ -18,6 +18,7 @@ public class MovementController : MonoBehaviour
 {
     public PlayerState currentState;
     public float speed = 5; //player speed
+    public float baseAttack;
     private Rigidbody2D myRigidbody; //creates rigidbody object
     private Vector3 change; //creates vector object
     private Animator animator; //creates animator object
@@ -30,11 +31,12 @@ public class MovementController : MonoBehaviour
     public GameSignal playerHit;
     public GameSignal reduceMagic;
     public GameObject projectile;
-    SceneTransition levelManager = new SceneTransition();
+    SceneTransition levelManager;
 
 
     void Start()
     {
+        levelManager = GameObject.FindObjectOfType<SceneTransition>();
         currentState = PlayerState.walk;
         animator = GetComponent<Animator>(); //accesses animations
         myRigidbody = GetComponent<Rigidbody2D>(); //accesses rigig body component of player

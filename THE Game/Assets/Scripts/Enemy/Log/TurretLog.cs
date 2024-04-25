@@ -11,7 +11,7 @@ public class TurretLog : Log
     private Vector3 tempVector;
     private GameObject current;
 
-    private void Update()
+    void Update()
     {
         delayCounter -= Time.deltaTime;
         if (delayCounter <= 0)
@@ -24,7 +24,8 @@ public class TurretLog : Log
     public override void CheckDistance()
     {
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
-        {
+        {  
+            Debug.Log("Hi");
             if(currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger)
             {
                 if(canFire)
@@ -42,10 +43,5 @@ public class TurretLog : Log
         {
             anim.SetBool("wakeUp", false);
         }
-    }
-
-    public void reflect()
-    {
-        current.GetComponent<Projectile>().Launch(-tempVector);
     }
 }

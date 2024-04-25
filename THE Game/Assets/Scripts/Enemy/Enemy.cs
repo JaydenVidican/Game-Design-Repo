@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -26,16 +27,16 @@ public class Enemy : MonoBehaviour
 
     [Header("Death Effects")]
     public GameObject deathEffect;
-    private float deathEffectDelay = 1f;
+    protected float deathEffectDelay = 1f;
     public LootTable thisLoot;
 
     [Header("Death Signals")]
     public GameSignal roomSignal;
     protected bool isDead;
     protected Rigidbody2D myRigidbody;
-
-    [Header("Target Variables")]
+    [HideInInspector]
     public Transform target;
+    [Header("Target Variables")]
     public float chaseRadius;
     public float attackRadius;
     [HideInInspector]
@@ -70,7 +71,7 @@ public class Enemy : MonoBehaviour
         transform.position = homePosition;
     }
     
-    private void takeDamage(float damage)
+    public virtual void takeDamage(float damage)
     {
         health -= damage;
         if (health <= 0)
@@ -99,7 +100,6 @@ public class Enemy : MonoBehaviour
     }
     public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage)
     {
-        Debug.Log("HALLO");
         if (myRigidbody != null)
         {
             StartCoroutine(KnockCo(myRigidbody, knockTime));

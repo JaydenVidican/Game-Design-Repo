@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   direction: {x: 0, y: 0}
-  lifetime: 1
+  lifetime: 3
   myRigidbody: {fileID: 7710860316239476294}
 --- !u!114 &4360752497573576346
 MonoBehaviour:

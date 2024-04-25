@@ -40,10 +40,24 @@ public class Projectile : MonoBehaviour
         myRigidbody.velocity = initialVel * speed;
     }
 
+    public void Reflect()
+    {
+        Vector2 reflectedVelocity = -myRigidbody.velocity;
+        GameObject temp = GameObject.Find("Reflected Rock Projectile");
+        GameObject current = Instantiate(temp, transform.position, Quaternion.identity);
+        current.GetComponent<Projectile>().Launch(reflectedVelocity);
+
+    }
+
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if((other.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Enemy Projectile")) || (other.gameObject.CompareTag("Enemy") && this.gameObject.CompareTag("Player Projectile")))
         {
+            Destroy(this.gameObject);
+        }
+        else if (other.gameObject.CompareTag("Sword"))
+        {
+            Reflect();
             Destroy(this.gameObject);
         }
     }
