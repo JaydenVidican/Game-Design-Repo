@@ -40,7 +40,6 @@ public class TreasureChest : Interactable
                 OpenChest();
             }else
             {
-                Debug.Log("WHY");
                 // Chest is already open
                 ChestAlreadyOpen();
             }

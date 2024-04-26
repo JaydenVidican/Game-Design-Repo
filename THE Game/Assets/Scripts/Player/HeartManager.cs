@@ -23,16 +23,18 @@ public class HeartManager : MonoBehaviour
 
     public void InitHearts()
     {
-        for (int i = 0; i < heartContainers.initialValue; i++)
+        for (int i = 0; i < heartContainers.RuntimeValue; i++)
         {
             hearts[i].gameObject.SetActive(true);
             hearts[i].sprite = fHeart;
         }
     }
 
-     public void UpdateHearts() {
+     public void UpdateHearts() 
+     {
+        InitHearts();
         float tempHealth = playerCurrentHealth.RuntimeValue / 4;
-        for (int i = 0; i < heartContainers.initialValue; i++) {
+        for (int i = 0; i < heartContainers.RuntimeValue; i++) {
             float currHeart = Mathf.Ceil(tempHealth - 1); //Mathf.Ceil rounds to nearest int
             if (i <= tempHealth - 1) 
             {

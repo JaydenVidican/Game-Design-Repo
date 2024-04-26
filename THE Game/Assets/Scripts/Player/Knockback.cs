@@ -34,7 +34,7 @@ public class Knockback : MonoBehaviour
         {
             other.GetComponent<Pot>().Smash();
         }
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player") && (this.gameObject.CompareTag("Sword") || this.gameObject.CompareTag("Enemy Projectile") || this.gameObject.CompareTag("Enemy Sword")))
+        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player")) && (this.gameObject.CompareTag("Sword") || this.gameObject.CompareTag("Enemy Projectile") || this.gameObject.CompareTag("Enemy Sword") || this.gameObject.CompareTag("Enemy")))
         {
             Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
             if (hit != null)

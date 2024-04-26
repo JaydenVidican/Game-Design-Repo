@@ -30,7 +30,9 @@ public class MovementController : MonoBehaviour
     public SpriteRenderer receivedItemSprite;
     public GameSignal playerHit;
     public GameSignal reduceMagic;
+    [Header("Projectile Info")]
     public GameObject projectile;
+    public Item bow;
     SceneTransition levelManager;
 
 
@@ -68,9 +70,12 @@ public class MovementController : MonoBehaviour
         }
         else if (Input.GetButtonDown("Second Weapon") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
         {
-            if(playerInventory.currentMagic > 0)
+            if(playerInventory.CheckForItem(bow))
             {
-                StartCoroutine(SecoundAttackCo());
+                if(playerInventory.currentMagic > 0)
+                {
+                    StartCoroutine(SecoundAttackCo());
+                }
             }
         }
         else if (currentState == PlayerState.walk || currentState == PlayerState.idle)
@@ -142,8 +147,8 @@ public class MovementController : MonoBehaviour
         if(change != Vector3.zero)
         {
             MoveCharacter();
-
-            //sets value for animator to display correct animation
+            change.x = Mathf.Round(change.x);
+            change.y = Mathf.Round(change.y);
             animator.SetFloat("moveX", change.x); 
             animator.SetFloat("moveY", change.y);
             animator.SetBool("moving", true); //transiton

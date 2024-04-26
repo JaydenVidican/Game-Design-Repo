@@ -22,6 +22,18 @@ public class Inventory : ScriptableObject
         currentMagic -= magicCost;
     }
 
+    public bool CheckForItem(Item item)
+    {
+        if(items.Contains(item))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void AddItem(Item itemToAdd)
     {
         if (itemToAdd.isKey)
