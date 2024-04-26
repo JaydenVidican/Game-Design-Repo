@@ -76,18 +76,11 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            DeathEffect();
-            MakeLoot();
-            if (roomSignal != null)
-            {
-                roomSignal.Raise();
-            }
-            isDead = true;
-            this.gameObject.SetActive(false);
+           Die();
         }
     }
 
-    private void MakeLoot()
+    protected void MakeLoot()
     {
         if (thisLoot != null)
         {
@@ -166,7 +159,7 @@ public class Enemy : MonoBehaviour
             currentState = newState;
     }
 
-    private void DeathEffect()
+    protected void DeathEffect()
     {
         if(deathEffect != null)
         {
@@ -174,4 +167,16 @@ public class Enemy : MonoBehaviour
             Destroy(effect, deathEffectDelay);
         }
     }
+
+    protected void Die()
+	{
+		DeathEffect();
+        MakeLoot();
+        if (roomSignal != null)
+        {
+            roomSignal.Raise();
+        }
+        isDead = true;
+        this.gameObject.SetActive(false);
+	}
 }

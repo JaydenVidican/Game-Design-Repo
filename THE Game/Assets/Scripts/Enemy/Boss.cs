@@ -7,6 +7,7 @@ public class Boss : Enemy
 {
     bool enraged;
 	public bool isInvulnerable = false;
+    public GameSignal bossSignal;
 
     public override void CheckDistance()
     {
@@ -49,6 +50,7 @@ public class Boss : Enemy
         if (health <= 0)
 		{
 			Die();
+            bossSignal.Raise();
 		}
 		else if (health <= 30) //enraged
 		{
@@ -65,12 +67,8 @@ public class Boss : Enemy
 
 		}
 	}
-
-	void Die()
-	{
-		Instantiate(deathEffect, transform.position, Quaternion.identity);
-		
-        Destroy(gameObject);
-	}
-
+    public bool checkIfDead()
+    {
+        return isDead;
+    }
 }

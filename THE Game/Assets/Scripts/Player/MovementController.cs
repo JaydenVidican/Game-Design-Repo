@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerState
 {
@@ -33,12 +30,20 @@ public class MovementController : MonoBehaviour
     [Header("Projectile Info")]
     public GameObject projectile;
     public Item bow;
-    SceneTransition levelManager;
+    
+    [Header("Boss tracking")]
+    [HideInInspector]
+    public bool boss1Death;
+    [HideInInspector]
+    public bool boss2Death;
+    [HideInInspector]
+    public bool boss3Death;
+    public FloatValue bossCount;
+
 
 
     void Start()
     {
-        levelManager = GameObject.FindObjectOfType<SceneTransition>();
         currentState = PlayerState.walk;
         animator = GetComponent<Animator>(); //accesses animations
         myRigidbody = GetComponent<Rigidbody2D>(); //accesses rigig body component of player
@@ -177,7 +182,7 @@ public class MovementController : MonoBehaviour
         else
         {
             this.gameObject.SetActive(false);
-            levelManager.lose();
+            SceneManager.LoadScene("Lose");
             
         }
     }
@@ -192,4 +197,34 @@ public class MovementController : MonoBehaviour
             myRigidbody.velocity = Vector2.zero;
         }
     }
+
+    public void updateBoss()
+    {
+        bossCount.RuntimeValue++;
+        if (bossCount.RuntimeValue == 1)
+        {
+            updateBoss1();
+        }
+        else if (bossCount.RuntimeValue == 2)
+        {
+            updateBoss2();
+        }
+        else if (bossCount.RuntimeValue == 3)
+        {
+            updateBoss3();
+        }
+    }
+
+    void updateBoss1()
+    {
+        boss1Death = true;
+    }   
+    void updateBoss2()
+    {
+        boss2Death = true;
+    }   
+    void updateBoss3()
+    {
+        boss3Death = true;
+    }   
 }

@@ -34630,6 +34630,50 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &1010110287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 374810860043734319, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+  m_PrefabInstance: {fileID: 1164595405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1010110288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5595844931361287819, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+  m_PrefabInstance: {fileID: 1164595405}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010110287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0c6e4f599f6d6419fadf6f70780889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1010110297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010110287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585c9fff573d9564cb1e05bf66611b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 762304a4803904a4c97eaed73f78c91f, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1010110288}
+        m_TargetAssemblyTypeName: MovementController, Assembly-CSharp
+        m_MethodName: updateBoss
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1010639140 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6150550064733023063, guid: 5d35107676368384991089ae05e81c47, type: 3}
@@ -34858,10 +34902,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5595844931361287819, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: bossCount
+      value: 
+      objectReference: {fileID: 11400000, guid: ea173f4338400cf4bba361b348deb881, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 374810860043734319, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      insertIndex: 8
+      addedObject: {fileID: 1010110297}
   m_SourcePrefab: {fileID: 100100000, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
 --- !u!1 &1294859541
 GameObject:
@@ -35284,6 +35335,10 @@ PrefabInstance:
       value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 6394786616788959466, guid: c83793fec12449d4c8aed944d4a2a537, type: 3}
+      propertyPath: bossSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: 762304a4803904a4c97eaed73f78c91f, type: 2}
+    - target: {fileID: 6394786616788959466, guid: c83793fec12449d4c8aed944d4a2a537, type: 3}
       propertyPath: roomSignal
       value: 
       objectReference: {fileID: 11400000, guid: 194299ea0e5a8dd4b813f42995366e18, type: 2}
@@ -35700,6 +35755,7 @@ GameObject:
   - component: {fileID: 2099989626}
   - component: {fileID: 2099989625}
   - component: {fileID: 2099989624}
+  - component: {fileID: 2099989629}
   m_Layer: 0
   m_Name: Boss Doors
   m_TagString: Untagged
@@ -36263,6 +36319,34 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2099989629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099989622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585c9fff573d9564cb1e05bf66611b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 194299ea0e5a8dd4b813f42995366e18, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7437243610964150190}
+        m_TargetAssemblyTypeName: BossRoom, Assembly-CSharp
+        m_MethodName: open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2129187222
 GameObject:
   m_ObjectHideFlags: 0
@@ -37701,6 +37785,7 @@ MonoBehaviour:
   virtualCamera: {fileID: 3643658907328068681}
   doors: []
   bossRoom: {fileID: 2099989622}
+  player: {fileID: 1010110288}
 --- !u!114 &7437243610964150191
 MonoBehaviour:
   m_ObjectHideFlags: 0

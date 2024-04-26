@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossRoom : DungeonEnemyRoom
 {
     public GameObject bossRoom;
+    public MovementController player;
 
     void Start()
     {
@@ -23,7 +24,10 @@ public class BossRoom : DungeonEnemyRoom
                 ChangeActivation(pots[i], true);
             }
             virtualCamera.SetActive(true);
-            StartCoroutine(Delay());
+            if( !player.boss1Death)
+            {
+                StartCoroutine(Delay());
+            }
         }
         
     }
