@@ -16,7 +16,7 @@ public class Sign : Interactable
     }
 
     
-    void Update()
+    protected virtual void Update()
     {
         if (Input.GetButtonDown("Interact") && playerInRange)
         {
@@ -32,7 +32,7 @@ public class Sign : Interactable
 
         }
     }
-    private void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {

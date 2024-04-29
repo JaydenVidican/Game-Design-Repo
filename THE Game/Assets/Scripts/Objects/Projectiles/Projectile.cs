@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
 
     [Header("Lifetime")]
     public float lifetime;
-    private float counter;
+    float counter;
 
     [Header("Rigidbody")]
     public Rigidbody2D myRigidbody;
@@ -42,8 +42,12 @@ public class Projectile : MonoBehaviour
 
     public void Reflect()
     {
-        Vector2 reflectedVelocity = -myRigidbody.velocity;
         GameObject temp = GameObject.Find("Reflected Rock Projectile");
+        if (this.CompareTag("Boss2"))
+        {
+            temp.tag = "Reflected Projectile";
+        }
+        Vector2 reflectedVelocity = -myRigidbody.velocity;
         GameObject current = Instantiate(temp, transform.position, Quaternion.identity);
         current.GetComponent<Projectile>().Launch(reflectedVelocity);
 
@@ -60,5 +64,9 @@ public class Projectile : MonoBehaviour
             Reflect();
             Destroy(this.gameObject);
         }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        Destroy(this.gameObject);
     }
 }

@@ -36,7 +36,7 @@ public class PatrolLog : Log
             }
         }
     }
-    private void ChangeGoal()
+    void ChangeGoal()
     {
         if (currentPoint == path.Length - 1)
         {

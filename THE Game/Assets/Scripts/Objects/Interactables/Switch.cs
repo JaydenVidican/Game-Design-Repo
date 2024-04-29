@@ -7,7 +7,7 @@ public class Switch : MonoBehaviour
     public bool active;
     public BoolValue storedValue;
     public Sprite activeSprite;
-    private SpriteRenderer mySprite;
+    SpriteRenderer mySprite;
     public Door thisDoor;
 
     void Start()

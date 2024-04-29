@@ -11,6 +11,8 @@ TagManager:
   - Ground
   - Enemy Sword
   - Player Projectile
+  - Reflected Projectile
+  - Boss2
   layers:
   - Default
   - TransparentFX

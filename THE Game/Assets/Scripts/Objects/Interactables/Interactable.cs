@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
@@ -26,7 +26,7 @@ public class Interactable : MonoBehaviour
             playerInRange = true;
         }
     }
-    private void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {

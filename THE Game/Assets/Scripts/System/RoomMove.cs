@@ -15,13 +15,7 @@ public class RoomMove : MonoBehaviour
         cam = Camera.main.GetComponent<CameraMovement>();
     }
 
-   
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player") && !other.isTrigger)
         {

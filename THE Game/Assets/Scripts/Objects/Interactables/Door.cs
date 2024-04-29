@@ -12,14 +12,14 @@ public class Door : Interactable
 {
     [Header("Door variables")]
     public DoorType thisDoorType;
-    private bool open = false;
+    bool open = false;
     public Inventory playerInventory;
     public SpriteRenderer doorSprite;
     public BoxCollider2D physicsCollider;
     public GameObject trigger;
 
 
-    private void Update()
+    void Update()
     {
         if (Input.GetButtonDown("Interact"))
         {

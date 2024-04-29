@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
-public class BoundedNPC : Interactable
+public class BoundedNPC : Sign
 {
     Vector3 directionVector;
     Transform myTransform;
@@ -11,22 +11,61 @@ public class BoundedNPC : Interactable
     Rigidbody2D myRigidbody;
     Animator anim;
     public Collider2D bounds;
+    bool isMoving;
+    public float minMoveTime;
+    public float maxMoveTime;
+    float moveTimeSeconds;
+    public float minWaitTime;
+    public float maxWaitTime;
+    float waitTimeSeconds;
     void Start()
     {
+        moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
+        waitTimeSeconds = Random.Range(minWaitTime, maxWaitTime);
         myTransform = GetComponent<Transform>();
         myRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         ChangeDirection();
     }
 
-    void Update()
+    protected override void Update()
     {
-        if (!playerInRange)
+        base.Update();
+        if (isMoving)
         {
-            Move();
+            moveTimeSeconds -= Time.deltaTime;
+            if (moveTimeSeconds <= 0)
+            {
+                moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
+                isMoving = false;
+            }
+            if (!playerInRange)
+            {
+                Move();
+            }
+
+        }
+        else
+        {
+            waitTimeSeconds -= Time.deltaTime;
+            if (waitTimeSeconds <= 0)
+            {
+                NewDirection();
+                isMoving = true;
+                waitTimeSeconds = Random.Range(minWaitTime, maxWaitTime);
+            }
         }
     }
 
+    void NewDirection()
+    {
+        Vector3 temp = directionVector;
+        ChangeDirection();
+        while(temp == directionVector)
+        {
+            ChangeDirection();
+        }
+    }
     void Move()
     {
         Vector3 temp = myTransform.position + directionVector * speed * Time.deltaTime;
@@ -72,12 +111,7 @@ public class BoundedNPC : Interactable
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Vector3 temp = directionVector;
-        ChangeDirection();
-        while(temp == directionVector)
-        {
-            ChangeDirection();
-        }
+        NewDirection();
     }
 }
 

@@ -44,7 +44,6 @@ public class Boss : Enemy
 
 	public override void takeDamage(float damage)
 	{
-		
         health -= damage;
 
         if (health <= 0)

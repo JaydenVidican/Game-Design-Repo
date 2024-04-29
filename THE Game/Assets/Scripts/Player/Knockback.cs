@@ -8,6 +8,8 @@ public class Knockback : MonoBehaviour
     public float knockTime;
     [HideInInspector]
     public float damage;
+
+    public GameSignal boss2;
     
     void Update()
     {
@@ -28,13 +30,25 @@ public class Knockback : MonoBehaviour
             damage = 1;
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
+        if (this.gameObject.CompareTag("Boss2"))
+        {
+            if (other.gameObject.CompareTag("Reflected Projectile"))
+            {
+                if(boss2 != null)
+                {
+                    boss2.Raise();
+                }
+            }
+        }
+        else
+        {
         if (other.gameObject.CompareTag("Breakable") && this.gameObject.CompareTag("Sword"))
         {
             other.GetComponent<Pot>().Smash();
         }
-        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player")) && (this.gameObject.CompareTag("Sword") || this.gameObject.CompareTag("Enemy Projectile") || this.gameObject.CompareTag("Enemy Sword") || this.gameObject.CompareTag("Enemy")))
+        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player")) && (this.gameObject.CompareTag("Sword") || this.gameObject.CompareTag("Enemy Projectile") || this.gameObject.CompareTag("Enemy Sword") || this.gameObject.CompareTag("Enemy") || this.gameObject.CompareTag("Player Projectile")))
         {
             Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
             if (hit != null)
@@ -57,10 +71,6 @@ public class Knockback : MonoBehaviour
                 }
             }
         }
-        if (other.gameObject.CompareTag("Enemy Projectile") && this.gameObject.CompareTag("Sword"))
-        {
-            
-            //Destroy(other.gameObject);
         }
     }
 }

@@ -6,10 +6,10 @@ public class TurretLog : Log
 {
     public GameObject projectile;
     public float fireDelay;
-    private float delayCounter;
-    private bool canFire = true;
-    private Vector3 tempVector;
-    private GameObject current;
+    float delayCounter;
+    bool canFire = true;
+    Vector3 tempVector;
+    GameObject current;
 
     void Update()
     {
@@ -25,7 +25,6 @@ public class TurretLog : Log
     {
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
         {  
-            Debug.Log("Hi");
             if(currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger)
             {
                 if(canFire)

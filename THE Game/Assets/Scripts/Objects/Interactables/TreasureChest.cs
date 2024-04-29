@@ -18,7 +18,7 @@ public class TreasureChest : Interactable
     public TMP_Text dialogText;
 
     [Header("Animation")]
-    private Animator anim;
+    Animator anim;
 
 	// Use this for initialization
 	void Start () {
@@ -78,7 +78,7 @@ public class TreasureChest : Interactable
         raiseItem.Raise();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger && !isOpen)
         {
@@ -87,7 +87,7 @@ public class TreasureChest : Interactable
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger && !isOpen)
         {

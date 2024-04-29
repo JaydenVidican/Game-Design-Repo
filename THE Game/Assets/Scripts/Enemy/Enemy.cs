@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public Animator anim;
 
-    private void Awake()
+    void Awake()
     {
         homePosition = transform.position;
         health = maxHealth.initialValue;
@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
         CheckDistance();
     }
 
-    private void OnEnable()
+    void OnEnable()
     {
         if (isDead)
         {
@@ -99,7 +99,7 @@ public class Enemy : MonoBehaviour
             takeDamage(damage);
         }
     }
-    private IEnumerator KnockCo(Rigidbody2D myRigidbody, float knockTime)
+    IEnumerator KnockCo(Rigidbody2D myRigidbody, float knockTime)
     {
         if (myRigidbody != null)
         {

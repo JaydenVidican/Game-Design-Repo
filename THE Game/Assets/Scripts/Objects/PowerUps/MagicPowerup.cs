@@ -7,11 +7,6 @@ public class MagicPowerup : PowerUp
     public Inventory playerInventory;
     public float magicValue;
 
-    void Start()
-    {
-        
-    }
-
     public void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Player"))

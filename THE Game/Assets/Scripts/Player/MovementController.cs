@@ -16,10 +16,10 @@ public class MovementController : MonoBehaviour
     public PlayerState currentState;
     public float speed = 5; //player speed
     public float baseAttack;
-    private Rigidbody2D myRigidbody; //creates rigidbody object
-    private Vector3 change; //creates vector object
-    private Animator animator; //creates animator object
-    private bool canSprint = true; //tells if user can sprint (if stamina added later on)
+    Rigidbody2D myRigidbody; //creates rigidbody object
+    Vector3 change; //creates vector object
+    Animator animator; //creates animator object
+    bool canSprint = true; //tells if user can sprint (if stamina added later on)
     public FloatValue currentHealth;
     public GameSignal playerHealthSignal;
     public VectorValue startingPosition;
@@ -89,7 +89,7 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    private IEnumerator AttackCo()
+    IEnumerator AttackCo()
     {
         animator.SetBool("attacking", true);
         currentState = PlayerState.attack;
@@ -102,7 +102,7 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    private IEnumerator SecoundAttackCo()
+    IEnumerator SecoundAttackCo()
     {
         currentState = PlayerState.attack;
         yield return null;
@@ -114,7 +114,7 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    private void MakeArrow()
+    void MakeArrow()
     {
             Vector2 temp = new Vector2 (animator.GetFloat("moveX"), animator.GetFloat("moveY"));
             Arrow arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>();
@@ -186,7 +186,7 @@ public class MovementController : MonoBehaviour
             
         }
     }
-    private IEnumerator KnockCo(float knockTime)
+    IEnumerator KnockCo(float knockTime)
     {
         if (myRigidbody != null)
         {

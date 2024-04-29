@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
-    private Animator anim;
+    Animator anim;
     public LootTable thisLoot;
 
     void Start()
@@ -17,7 +17,7 @@ public class Pot : MonoBehaviour
         anim.SetBool("smash", true);
         StartCoroutine(breakCo());
     }
-    private void MakeLoot()
+    void MakeLoot()
     {
         if (thisLoot != null)
         {
