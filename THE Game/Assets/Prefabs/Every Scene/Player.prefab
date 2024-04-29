@@ -143,6 +143,10 @@ MonoBehaviour:
   reduceMagic: {fileID: 11400000, guid: 23e39437c010b4343bcdae9c431228b8, type: 2}
   projectile: {fileID: 3137678750170882136, guid: 458797b335ad7e2479e8e0e1a6dc6601, type: 3}
   bow: {fileID: 11400000, guid: 6eb05c16e687d944b90f3fbe1550e1af, type: 2}
+  boss1Death: 0
+  boss2Death: 0
+  boss3Death: 0
+  bossCount: {fileID: 11400000, guid: ea173f4338400cf4bba361b348deb881, type: 2}
 --- !u!50 &7576247904894409424
 Rigidbody2D:
   serializedVersion: 4
@@ -488,6 +492,7 @@ MonoBehaviour:
   thrust: 4
   knockTime: 0.2
   damage: 1
+  boss2: {fileID: 0}
 --- !u!1 &6599442855538661662
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,6 +591,7 @@ MonoBehaviour:
   thrust: 4
   knockTime: 0.2
   damage: 1
+  boss2: {fileID: 0}
 --- !u!1 &6699541128650260876
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +691,7 @@ MonoBehaviour:
   thrust: 4
   knockTime: 0.2
   damage: 1
+  boss2: {fileID: 0}
 --- !u!1 &8392532105496056702
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,3 +987,4 @@ MonoBehaviour:
   thrust: 4
   knockTime: 0.2
   damage: 1
+  boss2: {fileID: 0}

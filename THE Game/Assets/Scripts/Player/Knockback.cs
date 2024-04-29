@@ -6,7 +6,6 @@ public class Knockback : MonoBehaviour
 {
     public float thrust;
     public float knockTime;
-    [HideInInspector]
     public float damage;
 
     public GameSignal boss2;
@@ -25,6 +24,10 @@ public class Knockback : MonoBehaviour
         {
             damage = this.gameObject.transform.parent.GetComponent<MovementController>().baseAttack;
         }
+        else if (this.gameObject.CompareTag("Enemy Projectile") || this.gameObject.CompareTag("Player Projectile") || this.gameObject.CompareTag("Boss2"))
+        {
+
+        }
         else
         {
             damage = 1;
@@ -41,6 +44,10 @@ public class Knockback : MonoBehaviour
                     boss2.Raise();
                 }
             }
+            else
+            {
+                doDamage(other);
+            }
         }
         else
         {
@@ -50,7 +57,14 @@ public class Knockback : MonoBehaviour
         }
         if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player")) && (this.gameObject.CompareTag("Sword") || this.gameObject.CompareTag("Enemy Projectile") || this.gameObject.CompareTag("Enemy Sword") || this.gameObject.CompareTag("Enemy") || this.gameObject.CompareTag("Player Projectile")))
         {
-            Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
+            doDamage(other);
+        }
+        }
+    }
+
+    void doDamage(Collider2D other)
+    {
+        Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
             if (hit != null)
             {
                 Vector2 difference = hit.transform.position - transform.position;
@@ -70,7 +84,5 @@ public class Knockback : MonoBehaviour
                     }
                 }
             }
-        }
-        }
     }
 }
