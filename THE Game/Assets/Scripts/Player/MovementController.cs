@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -40,11 +41,22 @@ public class MovementController : MonoBehaviour
     public bool boss3Death;
     public FloatValue bossCount;
 
+    [Header("Footsteps")]
+    public AudioClip[] footstepSounds; // Array to hold footstep sound clips
+    public float minTimeBetweenFootsteps = 0.3f; // Minimum time between footstep sounds
+    public float maxTimeBetweenFootsteps = 0.6f; // Maximum time between footstep sounds
+
+    private AudioSource audioSource; // Reference to the Audio Source component
+    private float timeSinceLastFootstep; // Time since the last footstep sound
 
 
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>(); // Get the Audio Source component
+    }
     void Start()
     {
-        currentState = PlayerState.walk;
+        currentState = PlayerState.idle;
         animator = GetComponent<Animator>(); //accesses animations
         myRigidbody = GetComponent<Rigidbody2D>(); //accesses rigig body component of player
         animator.SetFloat("moveX", 0);
@@ -58,6 +70,24 @@ public class MovementController : MonoBehaviour
             speed = 10;
         else
             speed = 5;
+
+        // Check if the player is walking
+        if (currentState == PlayerState.walk)
+        {
+            Debug.Log("Step 1");
+            // Check if enough time has passed to play the next footstep sound
+            if (Time.time - timeSinceLastFootstep >= Random.Range(minTimeBetweenFootsteps, maxTimeBetweenFootsteps))
+            {
+                Debug.Log("Step 2");
+                // Play a random footstep sound from the array
+                AudioClip footstepSound = footstepSounds[0];
+                Debug.Log(audioSource);
+                audioSource.PlayOneShot(footstepSound);
+
+                timeSinceLastFootstep = Time.time; // Update the time since the last footstep sound
+            }
+            Debug.Log("Step 3");
+        }
     }
 
     void FixedUpdate()
@@ -69,6 +99,14 @@ public class MovementController : MonoBehaviour
         change = Vector3.zero; 
         change.x = Input.GetAxisRaw("Horizontal"); //gets horizontal movement
         change.y = Input.GetAxisRaw("Vertical"); //gets vertical movement
+        if (change.x != 0 || change.y != 0)
+        {
+            currentState = PlayerState.walk;
+        }
+        else if ((change.x == 0 || change.y == 0) && currentState != PlayerState.attack && currentState != PlayerState.interact)
+        {
+            currentState = PlayerState.idle;
+        }
         if (Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
         {
             StartCoroutine(AttackCo());
@@ -98,7 +136,7 @@ public class MovementController : MonoBehaviour
         yield return new WaitForSeconds(.3f); //modify with animation length
         if (currentState != PlayerState.interact)
         {
-            currentState = PlayerState.walk;
+            currentState = PlayerState.idle;
         }
     }
 
@@ -110,7 +148,7 @@ public class MovementController : MonoBehaviour
         yield return new WaitForSeconds(.3f); //modify with animation length
         if (currentState != PlayerState.interact)
         {
-            currentState = PlayerState.walk;
+            currentState = PlayerState.idle;
         }
     }
 
