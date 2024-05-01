@@ -244,6 +244,7 @@ MonoBehaviour:
   thrust: 4
   knockTime: 0.2
   damage: 1
+  boss2: {fileID: 0}
 --- !u!114 &4773376520029889266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,16 +259,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   maxHealth: {fileID: 11400000, guid: 73153477cc0440f40b76927c115def26, type: 2}
-  enemyName: Perry
   baseAttack: 1
   moveSpeed: 1.5
-  homePosition: {x: 0, y: 0}
+  homePosition: {x: -56.9, y: 16}
   deathEffect: {fileID: 4559707314824671413, guid: 3c2dfe895c148f3408625441580100cb, type: 3}
+  thisLoot: {fileID: 0}
   roomSignal: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 4
   attackRadius: 0.5
   anim: {fileID: 0}
+  Sounds:
+  - {fileID: 8300000, guid: 51a23af10e0ec1b4d97caf38e650528b, type: 3}
+  - {fileID: 8300000, guid: a239a1d6249799a4eae76c6d2277b4a5, type: 3}
   path:
   - {fileID: 0}
   - {fileID: 0}

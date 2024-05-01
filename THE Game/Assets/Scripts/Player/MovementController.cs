@@ -42,7 +42,7 @@ public class MovementController : MonoBehaviour
     public FloatValue bossCount;
 
     [Header("Footsteps")]
-    public AudioClip[] footstepSounds; // Array to hold footstep sound clips
+    public AudioClip[] Sounds; // Array to hold footstep sound clips
     public float minTimeBetweenFootsteps = 0.3f; // Minimum time between footstep sounds
     public float maxTimeBetweenFootsteps = 0.6f; // Maximum time between footstep sounds
 
@@ -74,25 +74,21 @@ public class MovementController : MonoBehaviour
         // Check if the player is walking
         if (currentState == PlayerState.walk)
         {
-            Debug.Log("Step 1");
             // Check if enough time has passed to play the next footstep sound
             if (Time.time - timeSinceLastFootstep >= Random.Range(minTimeBetweenFootsteps, maxTimeBetweenFootsteps))
             {
-                Debug.Log("Step 2");
                 // Play a random footstep sound from the array
-                AudioClip footstepSound = footstepSounds[0];
-                Debug.Log(audioSource);
+                AudioClip footstepSound = Sounds[0];
                 audioSource.PlayOneShot(footstepSound);
 
                 timeSinceLastFootstep = Time.time; // Update the time since the last footstep sound
             }
-            Debug.Log("Step 3");
         }
     }
 
     void FixedUpdate()
     {
-        if (currentState == PlayerState.interact)
+        if (currentState == PlayerState.interact || currentState == PlayerState.attack)
         {
             return;
         }
@@ -103,7 +99,7 @@ public class MovementController : MonoBehaviour
         {
             currentState = PlayerState.walk;
         }
-        else if ((change.x == 0 || change.y == 0) && currentState != PlayerState.attack && currentState != PlayerState.interact)
+        else if (change.x == 0 && change.y == 0 && currentState != PlayerState.attack && currentState != PlayerState.interact)
         {
             currentState = PlayerState.idle;
         }
@@ -131,9 +127,11 @@ public class MovementController : MonoBehaviour
     {
         animator.SetBool("attacking", true);
         currentState = PlayerState.attack;
+        AudioClip swordSound = Sounds[1];
+        audioSource.PlayOneShot(swordSound);
         yield return new WaitForSeconds(.1f);
         animator.SetBool("attacking", false);
-        yield return new WaitForSeconds(.3f); //modify with animation length
+        yield return new WaitForSeconds(.35f); //modify with animation length
         if (currentState != PlayerState.interact)
         {
             currentState = PlayerState.idle;
@@ -144,6 +142,8 @@ public class MovementController : MonoBehaviour
     {
         currentState = PlayerState.attack;
         yield return null;
+        AudioClip arrowSound = Sounds[2];
+        audioSource.PlayOneShot(arrowSound);
         MakeArrow();
         yield return new WaitForSeconds(.3f); //modify with animation length
         if (currentState != PlayerState.interact)
@@ -212,6 +212,8 @@ public class MovementController : MonoBehaviour
     public void Knock(float knockTime, float damage)
     {
         currentHealth.RuntimeValue -= damage;
+        AudioClip HurtSound = Sounds[3];
+        audioSource.PlayOneShot(HurtSound);
         playerHealthSignal.Raise();
         if (currentHealth.RuntimeValue > 0)
         {

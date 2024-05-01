@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
     public EnemyState currentState;
 
     [Header("Enemy Stats")]
+    protected String enemyType;
     public FloatValue maxHealth;
     protected float health;
     public int baseAttack;
@@ -41,9 +43,12 @@ public class Enemy : MonoBehaviour
     public float attackRadius;
     [HideInInspector]
     public Animator anim;
+    private AudioSource audioSource; // Reference to the Audio Source component
+    public AudioClip[] Sounds;
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>(); // Get the Audio Source component
         homePosition = transform.position;
         health = maxHealth.initialValue;
         isDead = false;
@@ -77,6 +82,28 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
            Die();
+        }
+        else
+        {
+            checkSound("Hurt");
+        }
+
+    }
+
+    void checkSound(String effect)
+    {
+        if (enemyType == "Log")
+        {
+            if (effect == "Hurt")
+            {
+                AudioClip HurtSound = Sounds[0];
+                audioSource.PlayOneShot(HurtSound);
+            }
+            else if (effect == "Die")
+            {
+                AudioClip DeathSound = Sounds[1];
+                audioSource.PlayOneShot(DeathSound);
+            }
         }
     }
 
@@ -170,6 +197,7 @@ public class Enemy : MonoBehaviour
 
     protected void Die()
 	{
+        checkSound("Die");
 		DeathEffect();
         MakeLoot();
         if (roomSignal != null)
@@ -177,6 +205,25 @@ public class Enemy : MonoBehaviour
             roomSignal.Raise();
         }
         isDead = true;
+        if (enemyType != "Log")
+        {
+            this.gameObject.SetActive(false);
+        }
+        else
+        {
+            StartCoroutine(DeactivateAfterDelay(.5f)); // delay of 0.1 seconds
+        }
+    }
+
+    IEnumerator DeactivateAfterDelay(float delay)
+    {
+        Collider2D[] colliders = GetComponents<Collider2D>();
+        foreach (Collider2D collider in colliders)
+        {
+            collider.enabled = false; // Disable each collider
+        }
+        GetComponent<Renderer>().enabled = false;
+        yield return new WaitForSeconds(delay);
         this.gameObject.SetActive(false);
-	}
+    }
 }

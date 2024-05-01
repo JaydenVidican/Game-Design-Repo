@@ -195,8 +195,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   context: {fileID: 11400000, guid: 985cca7575789ba47a6bc184879253d4, type: 2}
+  dialogueBox: {fileID: 0}
+  dialogueText: {fileID: 0}
+  dialogue: I wonder what that alter in the lake is for
   speed: 2
   bounds: {fileID: 4161818440910079309}
+  minMoveTime: 1
+  maxMoveTime: 1.5
+  minWaitTime: 0.1
+  maxWaitTime: 0.75
 --- !u!58 &7830659217433169997
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3825465884959817354}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -44.57, y: 3.54, z: -4.3601403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -242,16 +242,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   maxHealth: {fileID: 11400000, guid: 73153477cc0440f40b76927c115def26, type: 2}
-  health: 0
-  enemyName: bob
   baseAttack: 1
   moveSpeed: 1.5
+  homePosition: {x: -44.57, y: -5}
   deathEffect: {fileID: 4559707314824671413, guid: 3c2dfe895c148f3408625441580100cb, type: 3}
+  thisLoot: {fileID: 0}
+  roomSignal: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 8
   attackRadius: 0
-  homePosition: {fileID: 0}
   anim: {fileID: 0}
+  Sounds:
+  - {fileID: 8300000, guid: 51a23af10e0ec1b4d97caf38e650528b, type: 3}
+  - {fileID: 8300000, guid: a239a1d6249799a4eae76c6d2277b4a5, type: 3}
   boundry: {fileID: 0}
 --- !u!114 &668859088681372076
 MonoBehaviour:
@@ -268,3 +271,4 @@ MonoBehaviour:
   thrust: 4
   knockTime: 0.2
   damage: 1
+  boss2: {fileID: 0}

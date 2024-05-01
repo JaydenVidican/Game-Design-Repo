@@ -6,6 +6,7 @@ public class Log : Enemy
 {
     void Start()
     {
+        enemyType = "Log";
         currentState = EnemyState.idle;
         myRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -33,4 +34,6 @@ public class Log : Enemy
             anim.SetBool("wakeUp", false);
         }
     }
+
+    
 }

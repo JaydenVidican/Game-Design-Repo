@@ -9,7 +9,7 @@ public class Knockback : MonoBehaviour
     public float damage;
 
     public GameSignal boss2;
-    
+
     void Update()
     {
         if (this.gameObject.CompareTag("Enemy"))

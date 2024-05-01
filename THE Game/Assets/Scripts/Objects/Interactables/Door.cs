@@ -17,7 +17,13 @@ public class Door : Interactable
     public SpriteRenderer doorSprite;
     public BoxCollider2D physicsCollider;
     public GameObject trigger;
+    public AudioClip[] Sounds; // Array to hold footstep sound clips
+    private AudioSource audioSource; // Reference to the Audio Source component
 
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>(); // Get the Audio Source component
+    }
 
     void Update()
     {
@@ -39,6 +45,8 @@ public class Door : Interactable
     }
     public void Open()
     {
+        AudioClip doorSound = Sounds[0];
+        audioSource.PlayOneShot(doorSound);
         doorSprite.enabled = false;
         open = true;
         physicsCollider.enabled = false;
