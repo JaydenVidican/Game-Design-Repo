@@ -211,7 +211,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            StartCoroutine(DeactivateAfterDelay(.5f)); // delay of 0.1 seconds
+            StartCoroutine(DeactivateAfterDelay(.8f)); // delay of 0.1 seconds
         }
     }
 

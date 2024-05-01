@@ -67,7 +67,7 @@ public class MovementController : MonoBehaviour
     void Update() //checks every frame if player is holding spring key
     {
         if (Input.GetKey("left shift") && canSprint == true) 
-            speed = 10;
+            speed = 8;
         else
             speed = 5;
 

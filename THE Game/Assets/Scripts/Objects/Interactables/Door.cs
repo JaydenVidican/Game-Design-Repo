@@ -40,9 +40,18 @@ public class Door : Interactable
             }
         }
         if (open)
-            trigger.SetActive(false);
-        
+        {
+            Debug.Log("HELLO");
+            StartCoroutine(DeactivateAfterDelay(1f)); // delay of 0.1 seconds
+        }
     }
+
+    IEnumerator DeactivateAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        trigger.SetActive(false);
+    }
+
     public void Open()
     {
         AudioClip doorSound = Sounds[0];

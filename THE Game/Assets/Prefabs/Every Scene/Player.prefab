@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7325971993328728919}
   - component: {fileID: 3812276810737096212}
   - component: {fileID: 8228013293008109551}
-  - component: {fileID: 1084682979454990961}
+  - component: {fileID: 1317081913366695408}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0c6e4f599f6d6419fadf6f70780889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
+  currentState: 4
   speed: 5
   baseAttack: 1
   currentHealth: {fileID: 11400000, guid: abdb471e9ead712478e5e4c8acc2c60a, type: 2}
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_UseImpactDirection: 0
   m_ScaleImpactWithMass: 0
   m_ScaleImpactWithSpeed: 0
---- !u!82 &1084682979454990961
+--- !u!82 &1317081913366695408
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -402,7 +402,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e5364e2771a40e04d9b0840d1da8764b, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

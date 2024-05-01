@@ -7,10 +7,10 @@ public class DungeonEnemyRoom : DungeonRoom
 {
     public Door[] doors;
 
-    void Start()
-    {
-        OpenDoors();
-    }
+    //void Start()
+    //{
+//        OpenDoors();
+    //}
 
     public int EnemiesActive()
     {
