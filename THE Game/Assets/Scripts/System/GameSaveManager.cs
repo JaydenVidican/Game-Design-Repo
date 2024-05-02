@@ -91,10 +91,18 @@ public class GameSaveManager : MonoBehaviour
             file.Close();
 
         }
+        SaveCurrentRoom();
+        Debug.Log(roomSave);
     }
     public void LoadScriptables()
     {
-        //if (File.Exists.)
+        if(File.Exists(Application.persistentDataPath + "/currentRoom.dat"))
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/currentRoom.dat", FileMode.Open);
+            BinaryFormatter binary = new BinaryFormatter();
+            roomSave = (string)binary.Deserialize(file);
+            file.Close();
+        }
         for(int i = 0; i < objects.Count; i++)
         {
             if(File.Exists(Application.persistentDataPath + string.Format("/{0}.dat", i)))
@@ -112,6 +120,8 @@ public class GameSaveManager : MonoBehaviour
         ResetFloatValues();
         ResetBoolValues();
         inventory.Reset();
+        roomSave = null;
+        SaveCurrentRoom();
         SaveScriptables();
     }
 }

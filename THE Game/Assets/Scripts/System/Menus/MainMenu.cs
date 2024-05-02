@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         gameSave.LoadScriptables();
-        SceneManager.LoadScene("Room 2");
+        SceneManager.LoadScene(gameSave.roomSave);
     }
     public void Credits()
     {

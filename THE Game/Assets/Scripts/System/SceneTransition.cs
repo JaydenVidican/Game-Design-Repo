@@ -8,6 +8,7 @@ public class SceneTransition : MonoBehaviour
 {
     [Header("New Scene Variables")]
     public string sceneToLoad;
+    public static string loadedScene;
     public Vector2 playerPosition;
     public VectorValue playerStorage;
 
@@ -23,6 +24,7 @@ public class SceneTransition : MonoBehaviour
             GameObject panel = Instantiate(fadeInPanel, Vector3.zero, Quaternion.identity) as GameObject;
             Destroy(panel, 1);
         }
+        
     }
     
     public void OnTriggerEnter2D(Collider2D other)
@@ -34,18 +36,14 @@ public class SceneTransition : MonoBehaviour
             //SceneManager.LoadScene(sceneToLoad);
         }
     }
-
-    public void begin()
-    {
-        sceneToLoad = "Room 1";
-       SceneManager.LoadScene(sceneToLoad);
-    }
     public IEnumerator FadeCo()
     {
         if (fadeOutPanel != null)
         {
             Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity);
             yield return new WaitForSeconds(fadeWait);
+            GameObject gameSaveManager = GameObject.Find("GameSaveManager");
+            gameSaveManager.GetComponent<GameSaveManager>().RoomStore(sceneToLoad);
             AsyncOperation AsyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
             while(!AsyncOperation.isDone)
             {
