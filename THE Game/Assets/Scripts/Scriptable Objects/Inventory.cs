@@ -42,6 +42,10 @@ public class Inventory : ScriptableObject
         {
             numberOfKeys++;
         }
+        else if (itemToAdd.isArtifact)
+        {
+            artifactCount++;
+        }
         else
         {
             if (!items.Contains(itemToAdd))
