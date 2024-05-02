@@ -5,22 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public GameSaveManager gameSave;
     public void NewGame()
     {
-        SceneManager.LoadScene("Room 1");
+        gameSave.Reset();
+        SceneManager.LoadScene("Room 2");
+    }
+    public void LoadGame()
+    {
+        gameSave.LoadScriptables();
+        SceneManager.LoadScene("Room 2");
     }
     public void Credits()
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
+[System.Serializable]
 public class Inventory : ScriptableObject
 {
     public Item currentItem;
@@ -11,6 +12,7 @@ public class Inventory : ScriptableObject
     public int coins;
     public float maxMagic = 10;
     public float currentMagic;
+    public int artifactCount;
 
     public void OnEnable()
     {
@@ -47,5 +49,13 @@ public class Inventory : ScriptableObject
                 items.Add(itemToAdd);
             }
         }
+    }
+    public void Reset()
+    {
+        numberOfKeys = 0;
+        coins = 0;
+        items.Clear();
+        currentMagic = maxMagic;
+        artifactCount = 0;
     }
 }

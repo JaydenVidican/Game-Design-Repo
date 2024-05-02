@@ -10,11 +10,6 @@ public class Sign : Interactable
     public TMP_Text dialogueText;
     public string dialogue;
 
-    void Start()
-    {
-        
-    }
-
     
     protected virtual void Update()
     {

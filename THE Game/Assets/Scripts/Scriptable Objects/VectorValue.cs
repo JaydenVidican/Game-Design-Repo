@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 [CreateAssetMenu]
+
 public class VectorValue : ScriptableObject, ISerializationCallbackReceiver
 {
     [Header("Value running in game")]

@@ -123,7 +123,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -252,6 +252,7 @@ MonoBehaviour:
   chaseRadius: 6
   attackRadius: 0
   anim: {fileID: 0}
+  Sounds: []
   projectile: {fileID: 6614715825928363563, guid: 3a9747cb311557143b7dc25072f781f3, type: 3}
   fireDelay: 1
 --- !u!114 &6723921324971790551
@@ -269,3 +270,4 @@ MonoBehaviour:
   thrust: 4
   knockTime: 0.3
   damage: 1
+  boss2: {fileID: 0}

@@ -57,7 +57,10 @@ public class Knockback : MonoBehaviour
         }
         if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player")) && (this.gameObject.CompareTag("Sword") || this.gameObject.CompareTag("Enemy Projectile") || this.gameObject.CompareTag("Enemy Sword") || this.gameObject.CompareTag("Enemy") || this.gameObject.CompareTag("Player Projectile")))
         {
-            doDamage(other);
+            if (other.isTrigger)
+            {
+                doDamage(other);
+            }
         }
         }
     }

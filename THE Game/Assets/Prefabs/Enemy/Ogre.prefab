@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4475383218891659850}
   m_Layer: 8
   m_Name: up hit box
-  m_TagString: Sword
+  m_TagString: Enemy Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 1102138558564923630}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09000015, y: 0.12999916, z: 0}
-  m_LocalScale: {x: 0.820988, y: 0.820988, z: 0.820988}
+  m_LocalPosition: {x: -0.032701, y: 0.15009, z: 0}
+  m_LocalScale: {x: 0.8552281, y: 0.8552281, z: 0.8552281}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1461620993622864463}
@@ -98,6 +98,7 @@ MonoBehaviour:
   thrust: 2
   knockTime: 0.1
   damage: 4
+  boss2: {fileID: 0}
 --- !u!1 &1663196459677538288
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +112,7 @@ GameObject:
   - component: {fileID: 3607574208534549985}
   m_Layer: 8
   m_Name: down hit box
-  m_TagString: Sword
+  m_TagString: Enemy Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,8 +126,8 @@ Transform:
   m_GameObject: {fileID: 1663196459677538288}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 0.13, z: 0}
-  m_LocalScale: {x: 0.820988, y: 0.820988, z: 0.820988}
+  m_LocalPosition: {x: -0.032701, y: 0.15009, z: 0}
+  m_LocalScale: {x: 0.8552281, y: 0.8552281, z: 0.8552281}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1461620993622864463}
@@ -206,6 +207,7 @@ MonoBehaviour:
   thrust: 2
   knockTime: 0.1
   damage: 4
+  boss2: {fileID: 0}
 --- !u!1 &1896397277809573062
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,9 +239,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896397277809573062}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 26.73, y: 7.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.3158, y: 3.3158, z: 3.3158}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8943247810201283742}
@@ -333,7 +335,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -453,6 +455,7 @@ MonoBehaviour:
   thrust: 4
   knockTime: 0.2
   damage: 1
+  boss2: {fileID: 0}
 --- !u!114 &1768738907881709717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,7 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   maxHealth: {fileID: 11400000, guid: 73153477cc0440f40b76927c115def26, type: 2}
-  baseAttack: 1
+  baseAttack: 4
   moveSpeed: 1
   homePosition: {x: 0, y: 0}
   deathEffect: {fileID: 4559707314824671413, guid: 3c2dfe895c148f3408625441580100cb, type: 3}
@@ -475,8 +478,9 @@ MonoBehaviour:
   roomSignal: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 6
-  attackRadius: 1
+  attackRadius: 3
   anim: {fileID: 0}
+  Sounds: []
 --- !u!1 &4398385929570956005
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +494,7 @@ GameObject:
   - component: {fileID: 4611557756132808509}
   m_Layer: 8
   m_Name: right hit box
-  m_TagString: Sword
+  m_TagString: Enemy Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -504,8 +508,8 @@ Transform:
   m_GameObject: {fileID: 4398385929570956005}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09000015, y: 0.12999916, z: 0}
-  m_LocalScale: {x: 0.820988, y: 0.820988, z: 0.820988}
+  m_LocalPosition: {x: -0.032701, y: 0.15009, z: 0}
+  m_LocalScale: {x: 0.8552281, y: 0.8552281, z: 0.8552281}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1461620993622864463}
@@ -576,6 +580,7 @@ MonoBehaviour:
   thrust: 2
   knockTime: 0.1
   damage: 4
+  boss2: {fileID: 0}
 --- !u!1 &5468174449798938954
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +594,7 @@ GameObject:
   - component: {fileID: 4731284330545143346}
   m_Layer: 8
   m_Name: left hit box
-  m_TagString: Sword
+  m_TagString: Enemy Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -603,8 +608,8 @@ Transform:
   m_GameObject: {fileID: 5468174449798938954}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09000015, y: 0.12999916, z: 0}
-  m_LocalScale: {x: 0.820988, y: 0.820988, z: 0.820988}
+  m_LocalPosition: {x: -0.032701, y: 0.15009, z: 0}
+  m_LocalScale: {x: 0.8552281, y: 0.8552281, z: 0.8552281}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1461620993622864463}
@@ -674,3 +679,4 @@ MonoBehaviour:
   thrust: 2
   knockTime: 0.1
   damage: 4
+  boss2: {fileID: 0}
