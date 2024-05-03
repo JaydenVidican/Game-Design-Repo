@@ -88,7 +88,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 140537361
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -543693898, guid: 483820ce8e9ee4240a1f53fc3a017d74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -156,7 +156,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2df83e1adb37bc64ea5b21832aef2630, type: 3}
   minTimeBetweenFootsteps: 0.3
   maxTimeBetweenFootsteps: 0.6
-  artifactCount: {fileID: 11400000, guid: 877941f81386d9b4ebbcbfd08d6ef7a1, type: 2}
+  flashColor: {r: 1, g: 0, b: 0, a: 0.5882353}
+  regularColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.07
+  numberOfFlashes: 6
+  triggerCollider: {fileID: 7013898075585435651}
+  mySprite: {fileID: 1682442598822412176}
 --- !u!50 &7576247904894409424
 Rigidbody2D:
   serializedVersion: 4

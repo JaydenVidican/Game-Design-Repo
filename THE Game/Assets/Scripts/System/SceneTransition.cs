@@ -43,7 +43,7 @@ public class SceneTransition : MonoBehaviour
             Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity);
             yield return new WaitForSeconds(fadeWait);
             GameObject gameSaveManager = GameObject.Find("GameSaveManager");
-            gameSaveManager.GetComponent<GameSaveManager>().RoomStore(sceneToLoad);
+            //gameSaveManager.GetComponent<GameSaveManager>().RoomStore(sceneToLoad);
             AsyncOperation AsyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
             while(!AsyncOperation.isDone)
             {

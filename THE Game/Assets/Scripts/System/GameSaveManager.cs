@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
@@ -15,6 +16,7 @@ public class GameSaveManager : MonoBehaviour
     public List<BoolValue> BoolValues = new List<BoolValue>();
     public Inventory inventory;
     public String roomSave;
+    
 
     void ResetScriptables()
     {
@@ -41,7 +43,6 @@ public class GameSaveManager : MonoBehaviour
             BoolValues[i].Reset();
         }
     }
-
 
     void Awake()
     {

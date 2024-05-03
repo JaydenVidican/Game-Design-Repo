@@ -35,7 +35,7 @@ public class BossRoom : DungeonEnemyRoom
     private IEnumerator Delay()
     {
         yield return new WaitForSeconds(1f);
-        bossRoom.SetActive(true);
+        //bossRoom.SetActive(true);
     }
 
     public void open()

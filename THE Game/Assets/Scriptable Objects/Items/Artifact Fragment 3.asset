@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Artifact Fragment 3
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 0}
-  itemDescription: 
+  itemDescription: you found the last piece of the artifact! the alter can now combine
+    them together
   isKey: 0
   isArtifact: 1

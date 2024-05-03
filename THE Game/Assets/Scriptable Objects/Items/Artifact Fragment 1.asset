@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Artifact Fragment 1
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 0}
-  itemDescription: 
+  itemDescription: you found the first piece of the artifact!
   isKey: 0
   isArtifact: 1
