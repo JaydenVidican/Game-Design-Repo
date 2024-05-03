@@ -170,7 +170,7 @@ MonoBehaviour:
   contents: {fileID: 11400000, guid: e45b7e1744ef415458a0f198975d2c43, type: 2}
   playerInventory: {fileID: 11400000, guid: 451d219140fd88043b818ce260702a08, type: 2}
   isOpen: 0
-  storedOpen: {fileID: 11400000, guid: f4842d0fccd7f5c4e9053f7075566d25, type: 2}
+  storedOpen: {fileID: 0}
   raiseItem: {fileID: 11400000, guid: 4d21b9a61f391df42958fa3a6cc476b4, type: 2}
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}

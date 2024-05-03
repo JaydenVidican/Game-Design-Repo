@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using TMPro;
 using UnityEngine;
 
 public class BoundedNPC : Sign
@@ -18,6 +19,7 @@ public class BoundedNPC : Sign
     public float minWaitTime;
     public float maxWaitTime;
     float waitTimeSeconds;
+    public bool canMove;
     void Start()
     {
         moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
@@ -25,34 +27,42 @@ public class BoundedNPC : Sign
         myTransform = GetComponent<Transform>();
         myRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        ChangeDirection();
+        if (canMove)
+        {
+            ChangeDirection();
+        }
     }
 
     protected override void Update()
     {
         base.Update();
-        if (isMoving)
-        {
-            moveTimeSeconds -= Time.deltaTime;
-            if (moveTimeSeconds <= 0)
-            {
-                moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
-                isMoving = false;
-            }
-            if (!playerInRange)
-            {
-                Move();
-            }
 
-        }
-        else
+        if (canMove)
         {
-            waitTimeSeconds -= Time.deltaTime;
-            if (waitTimeSeconds <= 0)
+            if (isMoving)
             {
-                NewDirection();
-                isMoving = true;
-                waitTimeSeconds = Random.Range(minWaitTime, maxWaitTime);
+                moveTimeSeconds -= Time.deltaTime;
+                if (moveTimeSeconds <= 0)
+                {
+                    moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
+                    isMoving = false;
+                    anim.SetBool("Moving", false);
+                }
+                if (!playerInRange)
+                {
+                    Move();
+                }
+
+            }
+            else
+            {
+                waitTimeSeconds -= Time.deltaTime;
+                if (waitTimeSeconds <= 0)
+                {
+                    NewDirection();
+                    isMoving = true;
+                    waitTimeSeconds = Random.Range(minWaitTime, maxWaitTime);
+                }
             }
         }
     }
@@ -72,6 +82,7 @@ public class BoundedNPC : Sign
         if(bounds.bounds.Contains(temp))
         {
             myRigidbody.MovePosition(temp);
+            anim.SetBool("Moving", true);
         }
         else
         {
