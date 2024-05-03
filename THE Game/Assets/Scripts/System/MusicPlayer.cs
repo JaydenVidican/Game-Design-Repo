@@ -12,6 +12,6 @@ public class MusicPlayer : MonoBehaviour
         else
             player = this;
         
-        GameObject.DontDestroyOnLoad(gameObject); 
+        //GameObject.DontDestroyOnLoad(gameObject); 
     }
 }
