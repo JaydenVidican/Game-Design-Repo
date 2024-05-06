@@ -41,7 +41,6 @@ public class Door : Interactable
         }
         if (open)
         {
-            Debug.Log("HELLO");
             StartCoroutine(DeactivateAfterDelay(1f)); // delay of 0.1 seconds
         }
     }

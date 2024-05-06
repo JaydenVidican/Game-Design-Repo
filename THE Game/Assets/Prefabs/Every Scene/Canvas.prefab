@@ -92,7 +92,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5432659292532856730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -318,6 +318,7 @@ MonoBehaviour:
   eHeart: {fileID: 1915640783, guid: 44d5e98953121104585486747a76a79a, type: 3}
   heartContainers: {fileID: 11400000, guid: 647f8217afe74e24bb5e62d0d86074be, type: 2}
   playerCurrentHealth: {fileID: 11400000, guid: abdb471e9ead712478e5e4c8acc2c60a, type: 2}
+  sceneHealths: {fileID: 11400000, guid: 799588ddcaad1274b8598ca1b85ed80f, type: 2}
 --- !u!1 &3058576372242143853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8975761227478408973
 RectTransform:
   m_ObjectHideFlags: 0

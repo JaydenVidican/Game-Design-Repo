@@ -13,7 +13,6 @@ public class FloatValue : ScriptableObject
 
     public void Reset()
     {
-        Debug.Log("HE");
         RuntimeValue = initialValue;
     }
 
