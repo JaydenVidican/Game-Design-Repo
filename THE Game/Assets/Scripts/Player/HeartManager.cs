@@ -13,11 +13,12 @@ public class HeartManager : MonoBehaviour
     public Sprite eHeart; //empty heart
     public FloatValue heartContainers;
     public FloatValue playerCurrentHealth;
+    public FloatValue sceneHealths;
 
 
     void Start()
     {
-        heartContainers.RuntimeValue = playerCurrentHealth.RuntimeValue / 4;
+        heartContainers.RuntimeValue = sceneHealths.RuntimeValue / 4;
         InitHearts();
     }
 
@@ -34,6 +35,10 @@ public class HeartManager : MonoBehaviour
     }
     
 
+    void Update()
+    {
+        UpdateHearts();
+    }
      public void UpdateHearts() 
      {
         InitHearts();

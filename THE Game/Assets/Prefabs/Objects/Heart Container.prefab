@@ -168,3 +168,4 @@ MonoBehaviour:
   powerupSignal: {fileID: 11400000, guid: 5272259de9d9f654b80115603fcb2e2a, type: 2}
   heartContainers: {fileID: 11400000, guid: 647f8217afe74e24bb5e62d0d86074be, type: 2}
   playerHealth: {fileID: 11400000, guid: abdb471e9ead712478e5e4c8acc2c60a, type: 2}
+  sceneHealths: {fileID: 11400000, guid: 799588ddcaad1274b8598ca1b85ed80f, type: 2}
