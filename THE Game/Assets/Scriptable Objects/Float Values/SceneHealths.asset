@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SceneHealths
   m_EditorClassIdentifier: 
   initialValue: 12
-  RuntimeValue: 16
+  RuntimeValue: 12
