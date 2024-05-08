@@ -44,10 +44,6 @@ public class TreasureChest : Interactable
                 ChestAlreadyOpen();
             }
         }
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            Debug.Log(playerInRange);
-        }
     }
 
     public void OpenChest()
