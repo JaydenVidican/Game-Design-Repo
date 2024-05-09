@@ -161,6 +161,10 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    public void Upgrade()
+    {
+        baseAttack += playerInventory.swordUpgradeCount * 3;
+    }
     void MakeArrow()
     {
             Vector2 temp = new Vector2 (animator.GetFloat("moveX"), animator.GetFloat("moveY"));

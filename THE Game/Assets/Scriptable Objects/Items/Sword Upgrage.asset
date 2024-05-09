@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword Upgrage
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 0}
-  itemDescription: 
+  itemDescription: Its a better sword!
   isKey: 0
   isArtifact: 0
   isSwordUpgrade: 1

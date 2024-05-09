@@ -14,6 +14,7 @@ public class TreasureChest : Interactable
 
     [Header("Signals and Dialog")]
     public GameSignal raiseItem;
+    public GameSignal upgrade;
     public GameObject dialogBox;
     public TMP_Text dialogText;
 
@@ -55,6 +56,10 @@ public class TreasureChest : Interactable
         // add contents to the inventory
         playerInventory.AddItem(contents);
         playerInventory.currentItem = contents;
+        if (contents.isSwordUpgrade)
+        {
+            upgrade.Raise();
+        }
         // Raise the signal to the player to animate
         raiseItem.Raise();
         // raise the context clue

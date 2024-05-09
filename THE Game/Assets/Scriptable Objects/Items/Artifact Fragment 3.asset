@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Artifact Fragment 3
   m_EditorClassIdentifier: 
   itemSprite: {fileID: -1082640857, guid: d862a514a2b57564cad5586e8f744c8b, type: 3}
-  itemDescription: you found the last piece of the artifact! the alter can now combine
-    them together
+  itemDescription: you found the third piece of the artifact!
   isKey: 0
   isArtifact: 1
+  isSwordUpgrade: 0

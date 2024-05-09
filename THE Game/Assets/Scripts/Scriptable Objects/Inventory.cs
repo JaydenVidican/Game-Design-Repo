@@ -13,6 +13,7 @@ public class Inventory : ScriptableObject
     public float maxMagic = 10;
     public float currentMagic;
     public int artifactCount;
+    public int swordUpgradeCount;
 
     public void OnEnable()
     {
@@ -46,6 +47,10 @@ public class Inventory : ScriptableObject
         {
             artifactCount++;
         }
+        else if (itemToAdd.isSwordUpgrade)
+        {
+            swordUpgradeCount++;
+        }
         else
         {
             if (!items.Contains(itemToAdd))
@@ -61,5 +66,6 @@ public class Inventory : ScriptableObject
         items.Clear();
         currentMagic = maxMagic;
         artifactCount = 0;
+        swordUpgradeCount = 0;
     }
 }
