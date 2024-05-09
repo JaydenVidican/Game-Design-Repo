@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85701896bdc062c4fb09bd580189c695, type: 3}
   m_Name: Artifact Fragment 3
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -1082640857, guid: d862a514a2b57564cad5586e8f744c8b, type: 3}
   itemDescription: you found the last piece of the artifact! the alter can now combine
     them together
   isKey: 0

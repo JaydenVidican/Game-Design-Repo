@@ -10,4 +10,5 @@ public class Item : ScriptableObject
     public string itemDescription;
     public bool isKey;
     public bool isArtifact;
+    public bool isSwordUpgrade;
 }

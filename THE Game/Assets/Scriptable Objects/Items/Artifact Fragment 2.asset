@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85701896bdc062c4fb09bd580189c695, type: 3}
   m_Name: Artifact Fragment 2
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 18214694, guid: 4ff76116e9294374ea5a0c0a1a87630e, type: 3}
   itemDescription: you found the second piece of the artifact!
   isKey: 0
   isArtifact: 1

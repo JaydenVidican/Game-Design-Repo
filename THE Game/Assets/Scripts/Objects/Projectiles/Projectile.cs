@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
 
     public void Launch(Vector2 initialVel)
     {
-        myRigidbody.velocity = initialVel * speed;
+        myRigidbody.velocity = initialVel.normalized * speed;
     }
 
     public void Reflect()
@@ -47,7 +47,7 @@ public class Projectile : MonoBehaviour
         {
             temp.tag = "Reflected Projectile";
         }
-        Vector2 reflectedVelocity = -myRigidbody.velocity;
+        Vector2 reflectedVelocity = -myRigidbody.velocity.normalized;
         GameObject current = Instantiate(temp, transform.position, Quaternion.identity);
         current.GetComponent<Projectile>().Launch(reflectedVelocity);
 

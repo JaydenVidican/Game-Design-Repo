@@ -10,6 +10,7 @@ public class SecondBoss : Boss
     bool canFire = true;
     Vector3 tempVector;
     GameObject current;
+    public Collider2D teleportArea;
 
     void Update()
     {
@@ -47,9 +48,20 @@ public class SecondBoss : Boss
 			Die();
             bossSignal.Raise();
 		}
-		else if (health <= 30) //enraged
-		{
+		if (health % 5 == 0)
+        {
+            projectile.GetComponent<Projectile>().speed++;
+            teleportArea.GetComponent<CircleCollider2D>();
+
             
-		}
+            Bounds bounds = teleportArea.bounds;
+
+        
+            float randomX = UnityEngine.Random.Range(bounds.min.x + 5, bounds.max.x - 5);
+            float randomY = UnityEngine.Random.Range(bounds.min.y + 5, bounds.max.y - 5);
+
+            
+            transform.position = new Vector3(randomX, randomY, transform.position.z);
+        }
 	}
 }
