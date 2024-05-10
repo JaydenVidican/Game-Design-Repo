@@ -37,6 +37,11 @@ public class HeartManager : MonoBehaviour
 
     void Update()
     {
+        if (playerCurrentHealth.RuntimeValue > 20)
+        {
+            playerCurrentHealth.RuntimeValue = 20;
+            heartContainers.RuntimeValue = 5;
+        }
         UpdateHearts();
     }
      public void UpdateHearts() 

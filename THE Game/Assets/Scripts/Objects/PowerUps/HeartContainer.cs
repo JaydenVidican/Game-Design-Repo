@@ -18,4 +18,11 @@ public class HeartContainer : PowerUp
             Destroy(this.gameObject);
         }
     }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player") && other.isTrigger)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

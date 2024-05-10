@@ -19,11 +19,13 @@ public class TreasureChest : Interactable
     public TMP_Text dialogText;
 
     [Header("Animation")]
-    Animator anim;
+    protected Animator anim;
+    
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
+
         isOpen = storedOpen.RuntimeValue;
         if(isOpen)
         {

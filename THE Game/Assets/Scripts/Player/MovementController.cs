@@ -273,6 +273,7 @@ public class MovementController : MonoBehaviour
 
     public void updateBoss()
     {
+        Debug.Log("TEst");
         bossCount.RuntimeValue++;
         if (bossCount.RuntimeValue == 1)
         {

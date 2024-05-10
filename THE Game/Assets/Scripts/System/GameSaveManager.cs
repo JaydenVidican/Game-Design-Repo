@@ -78,7 +78,7 @@ public class GameSaveManager : MonoBehaviour
     }
     void OnDisable()
     {
-        SaveScriptables();
+        //SaveScriptables();
     }
     
     public void SaveScriptables()

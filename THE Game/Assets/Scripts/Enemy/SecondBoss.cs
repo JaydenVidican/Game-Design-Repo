@@ -47,8 +47,9 @@ public class SecondBoss : Boss
 		{
 			Die();
             bossSignal.Raise();
+            Debug.Log("Step 1");
 		}
-		if (health % 5 == 0)
+		if (health % 4 == 0)
         {
             projectile.GetComponent<Projectile>().speed++;
             teleportArea.GetComponent<CircleCollider2D>();
