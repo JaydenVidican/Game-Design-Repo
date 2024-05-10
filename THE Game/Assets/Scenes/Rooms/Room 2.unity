@@ -199,7 +199,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2014918027155098622, guid: 829e714be73b32e46b2d0eb7248deee5, type: 3}
       propertyPath: m_text
-      value: I have to go north to the alter and meet Jim, he wanted to talk to me!
+      value: I have to go north to the alter, someone wanted to talk to me!
       objectReference: {fileID: 0}
     - target: {fileID: 3058576372242143853, guid: 829e714be73b32e46b2d0eb7248deee5, type: 3}
       propertyPath: m_IsActive
@@ -291,11 +291,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6095109516770390191, guid: 829e714be73b32e46b2d0eb7248deee5, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6095109516770390191, guid: 829e714be73b32e46b2d0eb7248deee5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6418316503682933984, guid: 829e714be73b32e46b2d0eb7248deee5, type: 3}
       propertyPath: m_IsActive
