@@ -12,6 +12,14 @@ public class SecondBoss : Boss
     GameObject current;
     public Collider2D teleportArea;
 
+    void Start()
+    {
+        currentState = EnemyState.walk;
+        myRigidbody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        target = GameObject.FindWithTag("Player").transform;
+        projectile.GetComponent<Projectile>().speed = 8;
+    }
     void Update()
     {
         delayCounter -= Time.deltaTime;
