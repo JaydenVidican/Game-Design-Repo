@@ -129110,18 +129110,23 @@ MonoBehaviour:
   currentState: 0
   maxHealth: {fileID: 11400000, guid: a6308e0efb14b564d941d65d8937c956, type: 2}
   baseAttack: 2
-  moveSpeed: 1
+  moveSpeed: 2
   homePosition: {x: 0, y: 0}
   deathEffect: {fileID: 4559707314824671413, guid: 3c2dfe895c148f3408625441580100cb, type: 3}
   thisLoot: {fileID: 11400000, guid: 94178413c95c69f4a8f7e77cd9e3b6c5, type: 2}
   roomSignal: {fileID: 11400000, guid: 194299ea0e5a8dd4b813f42995366e18, type: 2}
   target: {fileID: 0}
-  chaseRadius: 8
-  attackRadius: 2.5
+  chaseRadius: 16
+  attackRadius: 3
   anim: {fileID: 0}
   Sounds: []
-  isInvulnerable: 0
   bossSignal: {fileID: 11400000, guid: 762304a4803904a4c97eaed73f78c91f, type: 2}
+  flashColor: {r: 1, g: 0, b: 0, a: 0.5882353}
+  regularColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.07
+  numberOfFlashes: 6
+  triggerCollider: {fileID: 958283582716344516}
+  mySprite: {fileID: 3188670687200380728}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

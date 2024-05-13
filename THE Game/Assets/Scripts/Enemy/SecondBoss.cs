@@ -50,14 +50,17 @@ public class SecondBoss : Boss
     public override void takeDamage(float damage)
 	{
         health -= damage;
+        StartCoroutine(FlashCo());
 
         if (health <= 0)
 		{
 			Die();
             bossSignal.Raise();
-            Debug.Log("Step 1");
 		}
-		if (health % 4 == 0)
+
+
+        int x = 4;
+		if (health % x == 0)
         {
             projectile.GetComponent<Projectile>().speed++;
             teleportArea.GetComponent<CircleCollider2D>();
@@ -71,6 +74,8 @@ public class SecondBoss : Boss
 
             
             transform.position = new Vector3(randomX, randomY, transform.position.z);
+
+            x = Random.Range(3,6);
         }
 	}
 }

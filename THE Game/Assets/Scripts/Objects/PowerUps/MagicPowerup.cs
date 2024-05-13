@@ -12,6 +12,10 @@ public class MagicPowerup : PowerUp
         if(other.gameObject.CompareTag("Player"))
         {
             playerInventory.currentMagic += magicValue;
+            if (playerInventory.currentMagic > 10)
+            {
+                playerInventory.currentMagic = 10;
+            }
             powerupSignal.Raise();
             Destroy(this.gameObject);
         }

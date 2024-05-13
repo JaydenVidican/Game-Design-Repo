@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEditor;
 using UnityEngine;
 
 public class Boss : Enemy
 {
     bool enraged;
-	public bool isInvulnerable = false;
     public GameSignal bossSignal;
+
+    [Header("IFrames")]
+    public Color flashColor;
+    public Color regularColor;
+    public float flashDuration;
+    public int numberOfFlashes;
+    public Collider2D triggerCollider;
+    public SpriteRenderer mySprite;
+
+    float wait = .5f;
 
     public override void CheckDistance()
     {
@@ -25,14 +35,15 @@ public class Boss : Enemy
         {
             if(currentState == EnemyState.walk && currentState != EnemyState.stagger)
             {
-                StartCoroutine(AttackCo());
+                StartCoroutine(AttackCo(wait));
             }
         }
     }
 
-    public IEnumerator AttackCo()
+    public IEnumerator AttackCo(float waitTime)
     {
         currentState = EnemyState.attack;
+        yield return new WaitForSeconds(waitTime);
         anim.SetBool("attack", true);
         yield return new WaitForSeconds(.5f);
         currentState = EnemyState.stagger;
@@ -57,6 +68,7 @@ public class Boss : Enemy
             {
                 moveSpeed *= 2;
                 baseAttack *= 2;
+                wait /= 2;
             }
             else if (enraged)
             {
@@ -69,5 +81,31 @@ public class Boss : Enemy
     public bool checkIfDead()
     {
         return isDead;
+    }
+
+    protected override IEnumerator KnockCo(Rigidbody2D myRigidbody, float knockTime)
+    {
+        if (myRigidbody != null)
+        {
+            StartCoroutine(FlashCo());
+            yield return new WaitForSeconds(knockTime);
+            myRigidbody.velocity = Vector2.zero;
+            currentState = EnemyState.idle;
+            myRigidbody.velocity = Vector2.zero;
+        }
+    }
+    protected IEnumerator FlashCo()
+    {
+        int temp = 0;
+        triggerCollider.enabled = false;
+        while (temp < numberOfFlashes)
+        {
+            mySprite.color = flashColor;
+            yield return new WaitForSeconds(flashDuration);
+            mySprite.color = regularColor;
+            yield return new WaitForSeconds(flashDuration);
+            temp++;
+        }
+        triggerCollider.enabled = true;
     }
 }

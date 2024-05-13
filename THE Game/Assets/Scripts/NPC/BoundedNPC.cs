@@ -20,8 +20,9 @@ public class BoundedNPC : Sign
     public float maxWaitTime;
     float waitTimeSeconds;
     public bool canMove;
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
         waitTimeSeconds = Random.Range(minWaitTime, maxWaitTime);
         myTransform = GetComponent<Transform>();

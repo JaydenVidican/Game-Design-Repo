@@ -176,7 +176,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   lifetime: 2
   myRigidbody: {fileID: -2939943562151314986}
-  magicCost: 1
+  magicCost: 2
 --- !u!114 &6464270387961304710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,5 +191,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2
   knockTime: 0.3
-  damage: 4
+  damage: 3
   boss2: {fileID: 0}

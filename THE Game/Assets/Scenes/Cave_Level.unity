@@ -36067,7 +36067,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -140327,7 +140327,7 @@ PrefabInstance:
     - target: {fileID: 5192552134537395584, guid: ec03b6eba530d324f9ab7186885c3e34, type: 3}
       propertyPath: contents
       value: 
-      objectReference: {fileID: 11400000, guid: b3bfe1d79ece77a49a7fc8ef156a5e52, type: 2}
+      objectReference: {fileID: 11400000, guid: 4a8938d07a5758548b9272792bd7af04, type: 2}
     - target: {fileID: 5192552134537395584, guid: ec03b6eba530d324f9ab7186885c3e34, type: 3}
       propertyPath: dialogBox
       value: 
@@ -140360,6 +140360,10 @@ PrefabInstance:
     - target: {fileID: 374810860043734319, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073266068984862664, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4301581137860410746, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -140399,6 +140403,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4301581137860410746, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599442855538661662, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6699541128650260876, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173883507377307689, guid: 876fb26e1d66cf3439c77fbdfcd2c3c0, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -147985,8 +148001,13 @@ MonoBehaviour:
   attackRadius: 0
   anim: {fileID: 0}
   Sounds: []
-  isInvulnerable: 0
   bossSignal: {fileID: 11400000, guid: 6d26bc62a9dc1f24f973a4377facddb7, type: 2}
+  flashColor: {r: 1, g: 0, b: 0, a: 0.5882353}
+  regularColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.07
+  numberOfFlashes: 6
+  triggerCollider: {fileID: 2551839002169984854}
+  mySprite: {fileID: 6481582437595925278}
   projectile: {fileID: 6614715825928363563, guid: 593f8d63502cb774aaf2b3c08d98b3bf, type: 3}
   fireDelay: 1
   teleportArea: {fileID: 559166774}

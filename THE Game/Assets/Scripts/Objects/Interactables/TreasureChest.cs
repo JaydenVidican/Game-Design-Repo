@@ -23,7 +23,8 @@ public class TreasureChest : Interactable
     
 
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
+        base.Start();
         anim = GetComponent<Animator>();
 
         isOpen = storedOpen.RuntimeValue;
@@ -53,6 +54,10 @@ public class TreasureChest : Interactable
     {
         // Dialog window on
         dialogBox.SetActive(true);
+        if (miniMap != null)
+                {
+                    miniMap.SetActive(false);
+                }
         // dialog text = contents text
         dialogText.text = contents.itemDescription;
         // add contents to the inventory
@@ -76,6 +81,10 @@ public class TreasureChest : Interactable
     {
         // Dialog off
         dialogBox.SetActive(false);
+        if (miniMap != null)
+                {
+                    miniMap.SetActive(true);
+                }
         playerInRange = false;
         // raise the signal to the player to stop animating
         raiseItem.Raise();

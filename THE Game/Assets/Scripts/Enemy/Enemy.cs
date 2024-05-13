@@ -126,7 +126,7 @@ public class Enemy : MonoBehaviour
             takeDamage(damage);
         }
     }
-    IEnumerator KnockCo(Rigidbody2D myRigidbody, float knockTime)
+    protected virtual IEnumerator KnockCo(Rigidbody2D myRigidbody, float knockTime)
     {
         if (myRigidbody != null)
         {

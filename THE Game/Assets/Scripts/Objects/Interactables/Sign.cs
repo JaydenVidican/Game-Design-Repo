@@ -9,8 +9,6 @@ public class Sign : Interactable
     public GameObject dialogueBox;
     public TMP_Text dialogueText;
     public string dialogue;
-
-    
     protected virtual void Update()
     {
         if (Input.GetButtonDown("Interact") && playerInRange)
@@ -18,14 +16,23 @@ public class Sign : Interactable
             if (dialogueBox.activeInHierarchy)
             {
                 dialogueBox.SetActive(false);
+                if (miniMap != null)
+                {
+                    miniMap.SetActive(true);
+                }
             }
             else
             {
                 dialogueBox.SetActive(true);
+                if (miniMap != null)
+                {
+                    miniMap.SetActive(false);
+                }
                 dialogueText.text = dialogue;
             }
 
         }
+        
     }
     void OnTriggerExit2D(Collider2D other)
     {
@@ -34,6 +41,7 @@ public class Sign : Interactable
             context.Raise();
             playerInRange = false;
             dialogueBox.SetActive(false);
+            miniMap.SetActive(true);
         }
     }
 }
