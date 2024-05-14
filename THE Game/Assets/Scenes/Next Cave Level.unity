@@ -90033,6 +90033,10 @@ PrefabInstance:
       propertyPath: gameSave
       value: 
       objectReference: {fileID: 1216565213}
+    - target: {fileID: 3468925200088942430, guid: 8b3d2efc91f14134680d8b32a17331dd, type: 3}
+      propertyPath: pauseCount
+      value: 
+      objectReference: {fileID: 2063383194}
     - target: {fileID: 4064941798471124007, guid: 8b3d2efc91f14134680d8b32a17331dd, type: 3}
       propertyPath: m_Name
       value: Pause Canvas
@@ -128113,6 +128117,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 439c728fd30307c4499df02095224701, type: 3}
+--- !u!114 &2063383194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3005231453810020579, guid: 8b3d2efc91f14134680d8b32a17331dd, type: 3}
+  m_PrefabInstance: {fileID: 681039602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2065216663 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3240052142448509654, guid: 829e714be73b32e46b2d0eb7248deee5, type: 3}

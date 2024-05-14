@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PauseManager : MainMenu
 {
     bool isPaused;
     public GameObject pausePanel;
+    public TMP_Text pauseCount;
+    public Inventory playerInv;
     void Start()
     {
         isPaused = false;
@@ -18,6 +21,8 @@ public class PauseManager : MainMenu
         {
            ChangePause();
         }
+        pauseCount.text = "" + playerInv.artifactCount;
+
     }
 
     public void ChangePause()
