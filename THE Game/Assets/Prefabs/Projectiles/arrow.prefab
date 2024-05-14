@@ -176,7 +176,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   lifetime: 2
   myRigidbody: {fileID: -2939943562151314986}
-  magicCost: 2
+  magicCost: 1
 --- !u!114 &6464270387961304710
 MonoBehaviour:
   m_ObjectHideFlags: 0
